@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isee Digital Marketing - Lowongan</title>
+    
+    <!-- Import Font Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Import Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Konfigurasi Tema Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#046BD2',
+                            navy: '#070C35',
+                            yellow: '#FFB600',
+                            light: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-brand-light">
+    <!-- Page Transition Overlay -->
+    <div id="page-transition-overlay" class="fixed inset-0 bg-white z-[9999] transition-opacity duration-500 pointer-events-none opacity-100"></div>
+
+    <!-- 1. TOP BAR PROMO -->
+    <div class="bg-brand-navy text-white text-sm py-2 px-4 flex flex-col sm:flex-row justify-center items-center gap-2 md:gap-6 z-50 relative">
+        <p class="font-medium tracking-wide">15% PROMO MINGGU INI! DAPATKAN DISKON 15%</p>
+        <a href="kontak.html" class="bg-brand-yellow text-brand-navy font-bold py-1 px-4 rounded-full hover:bg-yellow-400 transition-colors shadow-[0_0_10px_rgba(255,182,0,0.3)]">Ambil Promo</a>
+    </div>
+
+    <!-- 2. NAVIGATION BAR (FLOATING GLASSMORPHISM) -->
+    <div class="w-full flex justify-center fixed top-6 z-50 px-4 pointer-events-none">
+        <nav id="navbar" class="pointer-events-auto w-full max-w-6xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-slate-100 rounded-full px-4 sm:px-8 py-3 flex justify-between items-center transition-all duration-300">
+            <!-- Logo -->
+            <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+                <div class="bg-white p-1.5 rounded-full shadow-sm group-hover:shadow-md transition-all">
+                    <img src="assets/logo.png" alt="Logo Isee Digital Marketing" class="h-8 w-auto">
+                </div>
+                <span class="font-extrabold text-lg md:text-xl text-brand-navy tracking-tight group-hover:text-brand-blue transition-colors">Isee Digital</span>
+            </a>
+            
+            <!-- Menu Links (Desktop) -->
+            <div class="hidden lg:flex space-x-1 items-center text-sm font-medium relative" id="nav-links-container">
+                <div id="nav-indicator" class="absolute bg-brand-blue rounded-full transition-all duration-300 ease-out shadow-md pointer-events-none opacity-0" style="z-index: 0;"></div>
+                <a href="index.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Beranda</a>
+                <a href="tentang-kami.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Tentang Kami</a>
+                <a href="layanan.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Layanan</a>
+                <a href="lowongan.html" class="nav-item relative z-10 text-white px-5 py-2 rounded-full font-bold transition-colors duration-300" data-active="true">Lowongan</a>
+                <a href="testimoni.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Testimoni</a>
+                <a href="artikel.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Artikel</a>
+                <a href="kontak.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Kontak</a>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="hidden lg:block ml-2">
+                <a href="kontak.html" class="bg-brand-navy text-white px-6 py-2.5 rounded-full font-bold hover:bg-brand-blue shadow-[0_4px_15px_rgba(7,12,53,0.2)] hover:shadow-[0_4px_20px_rgba(4,107,210,0.4)] transition-all duration-300 transform hover:-translate-y-0.5">Hubungi Kami</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="lg:hidden text-brand-navy p-2 hover:bg-white/50 rounded-full transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+    </div>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="#" class="fixed bottom-8 right-8 z-50 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 hover:scale-110 transition-all duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12.031 0C5.383 0 0 5.383 0 12.031c0 2.656.844 5.109 2.391 7.109L.469 24l5.016-1.578A11.96 11.96 0 0012.031 24c6.648 0 12.031-5.383 12.031-12.031S18.679 0 12.031 0zm4.015 17.203c-.656 1.844-3.328 2.016-4.406 2.016-2.531 0-5.813-1.641-7.875-4.406-1.922-2.578-2.063-5.203-1.078-6.844.484-.813 1.156-1.094 1.547-1.094.344 0 .688.016.984.016.328 0 .766-.125 1.188.859.438 1.031 1.188 2.922 1.297 3.125.109.203.188.438.047.672-.141.234-.219.375-.438.641-.219.266-.453.563-.641.766-.203.219-.422.453-.188.844.234.391 1.031 1.703 2.219 2.875 1.531 1.516 2.813 1.984 3.203 2.188.391.203.625.172.859-.078.234-.25.984-1.156 1.25-1.547.266-.391.531-.328.891-.234.359.094 2.266 1.063 2.656 1.266.391.203.656.313.75.484.094.172.094.984-.563 2.828z"/>
+        </svg>
+    </a>
+
+    <main>
+        <!-- 3. HERO SECTION LOWONGAN -->
+        <section class="bg-brand-navy pt-24 pb-32 text-center px-4 relative overflow-hidden">
+            <div class="max-w-4xl mx-auto relative z-10">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">Mari Bertumbuh Bersama<br><span class="text-brand-blue">Isee Digital Marketing</span></h1>
+                <p class="text-slate-300 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+                    Jadilah bagian dari tim inovatif kami dan bantu berbagai bisnis mencapai potensi maksimal mereka di era digital.
+                </p>
+            </div>
+            <!-- Dekorasi Latar Belakang (Motif Lingkaran) -->
+            <div class="absolute inset-0 flex flex-wrap justify-center items-center opacity-[0.03] pointer-events-none gap-6 overflow-hidden">
+                <div class="w-32 h-32 rounded-full border-[10px] border-white"></div>
+                <div class="w-32 h-32 rounded-full border-[10px] border-white"></div>
+                <div class="w-32 h-32 rounded-full border-[10px] border-white"></div>
+                <div class="w-32 h-32 rounded-full border-[10px] border-white"></div>
+                <div class="w-32 h-32 rounded-full border-[10px] border-white"></div>
+                <div class="w-32 h-32 rounded-full border-[10px] border-white"></div>
+                <div class="w-32 h-32 rounded-full border-[10px] border-white"></div>
+            </div>
+        </section>
+
+        <!-- 4. PERKS & CULTURE SECTION -->
+        <section class="py-20 bg-brand-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-12">Mengapa Bergabung Dengan Kami?</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+                    <!-- Kartu 1 -->
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-full flex items-center justify-center mb-6 text-xl">💡</div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-3">Lingkungan Kreatif</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Ruang bebas untuk berinovasi dan bereksplorasi.</p>
+                    </div>
+                    <!-- Kartu 2 -->
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-full flex items-center justify-center mb-6 text-xl">📈</div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-3">Pengembangan Karir</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Fokus pada peningkatan keahlian teknis dan manajerial.</p>
+                    </div>
+                    <!-- Kartu 3 -->
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-full flex items-center justify-center mb-6 text-xl">👥</div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-3">Tim yang Solid</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Kolaborasi erat dan bimbingan langsung dari ahli.</p>
+                    </div>
+                    <!-- Kartu 4 -->
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-full flex items-center justify-center mb-6 text-xl">💻</div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-3">Fleksibilitas</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Sistem kerja modern yang mendukung produktivitas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. JOB BOARD SECTION -->
+        <section class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-10">Posisi yang Tersedia</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Lowongan 1 -->
+                    <div class="bg-white p-8 rounded-3xl shadow-md border border-slate-100 hover:border-brand-blue transition-colors duration-300 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-navy mb-4">Performance Marketer</h3>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-blue-50 text-brand-blue font-bold px-3 py-1 rounded-full text-xs">Full-Time</span>
+                                <span class="bg-slate-100 text-slate-600 font-bold px-3 py-1 rounded-full text-xs">Sleman, Yogyakarta</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-4">
+                            <a href="kontak.html" class="bg-brand-blue text-white px-6 py-2.5 rounded-full font-bold hover:bg-blue-700 transition-colors text-sm shadow-md">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Lowongan 2 (Magang/Internship) -->
+                    <div class="bg-white p-8 rounded-3xl shadow-md border border-slate-100 hover:border-brand-blue transition-colors duration-300 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-navy mb-4">UI/UX Designer</h3>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-blue-50 text-brand-blue font-bold px-3 py-1 rounded-full text-xs">Internship</span>
+                                <span class="bg-slate-100 text-slate-600 font-bold px-3 py-1 rounded-full text-xs">Remote / WFO</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-4">
+                            <a href="kontak.html" class="bg-brand-blue text-white px-6 py-2.5 rounded-full font-bold hover:bg-blue-700 transition-colors text-sm shadow-md">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Lowongan 3 -->
+                    <div class="bg-white p-8 rounded-3xl shadow-md border border-slate-100 hover:border-brand-blue transition-colors duration-300 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-navy mb-4">Social Media Specialist</h3>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-blue-50 text-brand-blue font-bold px-3 py-1 rounded-full text-xs">Full-Time</span>
+                                <span class="bg-slate-100 text-slate-600 font-bold px-3 py-1 rounded-full text-xs">Sleman, Yogyakarta</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-4">
+                            <a href="kontak.html" class="bg-brand-blue text-white px-6 py-2.5 rounded-full font-bold hover:bg-blue-700 transition-colors text-sm shadow-md">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 6. FOOTER -->
+    <footer class="bg-brand-navy text-slate-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
+            <!-- Footer Col 1 -->
+            <div class="col-span-1">
+                <h4 class="text-white text-xl font-extrabold mb-4 flex items-center gap-2">
+                    <span class="text-2xl">🚀</span> Isee Digital
+                </h4>
+                <p class="mb-4 text-sm text-slate-400 leading-relaxed">Partner strategis digital marketing Anda untuk pertumbuhan bisnis yang eksponensial.</p>
+                <p class="mt-8 text-xs text-slate-500">&copy; 2026 Isee Digital Marketing.<br>Sleman, Yogyakarta.</p>
+            </div>
+            
+            <!-- Footer Col 2 -->
+            <div>
+                <h5 class="text-white font-bold mb-4 tracking-wide text-sm uppercase">Perusahaan</h5>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Beranda</a></li>
+                    <li><a href="tentang-kami.html" class="hover:text-white transition-colors">Tentang Kami</a></li>
+                    <li><a href="testimoni.html" class="hover:text-white transition-colors">Testimoni</a></li>
+                </ul>
+            </div>
+            
+            <!-- Footer Col 3 -->
+            <div>
+                <h5 class="text-white font-bold mb-4 tracking-wide text-sm uppercase">Layanan</h5>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li><a href="layanan.html" class="hover:text-white transition-colors">Layanan</a></li>
+                    <li><a href="artikel.html" class="hover:text-white transition-colors">Artikel</a></li>
+                    <li><a href="lowongan.html" class="hover:text-white transition-colors">Lowongan</a></li>
+                </ul>
+            </div>
+
+            <!-- Footer Col 4 -->
+            <div>
+                <h5 class="text-white font-bold mb-4 tracking-wide text-sm uppercase">Bantuan</h5>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li><a href="kontak.html" class="hover:text-white transition-colors">Kontak</a></li>
+                    <li class="flex items-center gap-2 mt-4"><span class="text-brand-blue">✉️</span> info@iseedigital.com</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Animations -->
+    <script src="assets/animations.js"></script>
+    <script>
+        // Navbar Dynamic Glassmorphism on Scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                navbar.classList.remove('bg-white', 'border-slate-100');
+                navbar.classList.add('bg-white/10', 'backdrop-blur-md', 'border-white/20');
+            } else {
+                navbar.classList.add('bg-white', 'border-slate-100');
+                navbar.classList.remove('bg-white/10', 'backdrop-blur-md', 'border-white/20');
+            }
+        });
+    </script>
+</body>
+</html>

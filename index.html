@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isee Digital Marketing - Beranda</title>
+    
+    <!-- Import Font Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Import Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Konfigurasi Tema Tailwind (Warna & Font Kustom) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#046BD2',
+                            navy: '#070C35',
+                            yellow: '#FFB600',
+                            light: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white">
+    <!-- Page Transition Overlay -->
+    <div id="page-transition-overlay" class="fixed inset-0 bg-white z-[9999] transition-opacity duration-500 pointer-events-none opacity-100"></div>
+
+    <!-- 1. TOP BAR PROMO -->
+    <div class="bg-brand-navy text-white text-sm py-2 px-4 flex flex-col sm:flex-row justify-center items-center gap-2 md:gap-6 z-50 relative">
+        <p class="font-medium tracking-wide">15% PROMO MINGGU INI! DAPATKAN DISKON 15%</p>
+        <a href="kontak.html" class="bg-brand-yellow text-brand-navy font-bold py-1 px-4 rounded-full hover:bg-yellow-400 transition-colors shadow-[0_0_10px_rgba(255,182,0,0.3)]">Ambil Promo</a>
+    </div>
+
+    <!-- 2. NAVIGATION BAR (FLOATING GLASSMORPHISM) -->
+    <div class="w-full flex justify-center fixed top-6 z-50 px-4 pointer-events-none">
+        <nav id="navbar" class="pointer-events-auto w-full max-w-6xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-slate-100 rounded-full px-4 sm:px-8 py-3 flex justify-between items-center transition-all duration-300">
+            <!-- Logo -->
+            <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+                <div class="bg-white p-1.5 rounded-full shadow-sm group-hover:shadow-md transition-all">
+                    <img src="assets/logo.png" alt="Logo Isee Digital Marketing" class="h-8 w-auto">
+                </div>
+                <span class="font-extrabold text-lg md:text-xl text-brand-navy tracking-tight group-hover:text-brand-blue transition-colors">Isee Digital</span>
+            </a>
+            
+            <!-- Menu Links (Desktop) -->
+            <div class="hidden lg:flex space-x-1 items-center text-sm font-medium relative" id="nav-links-container">
+                <div id="nav-indicator" class="absolute bg-brand-blue rounded-full transition-all duration-300 ease-out shadow-md pointer-events-none opacity-0" style="z-index: 0;"></div>
+                <a href="index.html" class="nav-item relative z-10 text-white px-5 py-2 rounded-full font-bold transition-colors duration-300" data-active="true">Beranda</a>
+                <a href="tentang-kami.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Tentang Kami</a>
+                <a href="layanan.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Layanan</a>
+                <a href="lowongan.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Lowongan</a>
+                <a href="testimoni.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Testimoni</a>
+                <a href="artikel.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Artikel</a>
+                <a href="kontak.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Kontak</a>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="hidden lg:block ml-2">
+                <a href="kontak.html" class="bg-brand-navy text-white px-6 py-2.5 rounded-full font-bold hover:bg-brand-blue shadow-[0_4px_15px_rgba(7,12,53,0.2)] hover:shadow-[0_4px_20px_rgba(4,107,210,0.4)] transition-all duration-300 transform hover:-translate-y-0.5">Hubungi Kami</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="lg:hidden text-brand-navy p-2 hover:bg-white/50 rounded-full transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+    </div>
+
+    <main>
+        <!-- 3. HERO SECTION -->
+        <section class="bg-white py-20 lg:py-32 relative overflow-hidden">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-navy leading-tight mb-6 tracking-tight">
+                    Siapkan Bisnismu Agar <span class="text-brand-blue">Omset Terus Berdatangan!</span>
+                </h1>
+                <p class="mt-4 text-base md:text-lg text-slate-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Jasa Digital Marketing Terbaik Untuk Bisnismu. Kami membantu merancang, mengeksekusi, dan mengoptimalkan strategi digital untuk pertumbuhan eksponensial.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="layanan.html" class="bg-brand-blue text-white px-8 py-3.5 rounded-full font-bold hover:bg-blue-700 hover:shadow-lg transition-all">Mulai Sekarang</a>
+                    <a href="kontak.html" class="bg-transparent text-brand-navy border border-brand-navy px-8 py-3.5 rounded-full font-bold hover:bg-brand-navy hover:text-white transition-all">Informasi & Pendaftaran</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. KENAPA HARUS KAMI SECTION -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-4">Kenapa Harus Kami</h2>
+                    <p class="text-slate-500">Pendekatan berbasis data yang fokus pada hasil nyata untuk bisnis Anda.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-slate-50 p-8 rounded-3xl hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                        <div class="w-12 h-12 bg-blue-100 text-brand-blue rounded-xl flex items-center justify-center mb-6 text-xl">★</div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-3">Kenapa Harus Kami</h3>
+                        <p class="text-slate-500 leading-relaxed text-sm">Tim ahli tersertifikasi dengan pengalaman bertahun-tahun menangani berbagai industri, memastikan kampanye Anda ditangani yang tepat.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-slate-50 p-8 rounded-3xl hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                        <div class="w-12 h-12 bg-orange-100 text-orange-500 rounded-xl flex items-center justify-center mb-6 text-xl">🎯</div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-3">Misi Utama Kami</h3>
+                        <p class="text-slate-500 leading-relaxed text-sm">Meningkatkan konversi dan ROI klien melalui strategi pemasaran digital yang inovatif, terukur, dan berkelanjutan.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-slate-50 p-8 rounded-3xl hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                        <div class="w-12 h-12 bg-purple-100 text-purple-500 rounded-xl flex items-center justify-center mb-6 text-xl">📄</div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-3">Apa yang didapatkan</h3>
+                        <p class="text-slate-500 leading-relaxed text-sm">Laporan komprehensif bulanan, optimasi real-time, dan konsultasi strategis eksklusif untuk memastikan pertumbuhan bisnis Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. HIGHLIGHT BANNER (DI JAMIN ADA PROGRESS) -->
+        <section class="bg-brand-blue py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-10">
+                <div class="text-white md:w-1/2">
+                    <h2 class="text-4xl lg:text-5xl font-extrabold mb-6 leading-tight">DI JAMIN ADA<br>PROGRESS</h2>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-white text-brand-blue font-bold px-4 py-1.5 rounded-full text-xs">DI KELOLAKAN</span>
+                        <span class="bg-white text-brand-blue font-bold px-4 py-1.5 rounded-full text-xs">TERIMA BERES</span>
+                        <span class="bg-white text-brand-blue font-bold px-4 py-1.5 rounded-full text-xs">GA PERLU REPOT</span>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://via.placeholder.com/600x350/070C35/FFFFFF?text=Tim+Isee+Sedang+Rapat" alt="Tim Isee" class="rounded-2xl shadow-2xl object-cover w-full h-64">
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. LAYANAN UNGGULAN -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-2">Layanan Unggulan Kami</h2>
+                        <p class="text-slate-500">Solusi end-to-end untuk mendominasi pasar digital.</p>
+                    </div>
+                    <a href="layanan.html" class="text-brand-blue font-semibold hover:underline mt-4 md:mt-0 flex items-center gap-1 text-sm">Lihat Semua Layanan &rarr;</a>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Layanan 1 -->
+                    <div class="group border border-slate-100 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300">
+                        <div class="h-40 bg-blue-100 flex items-start justify-start p-6 text-3xl text-brand-blue">📢</div>
+                        <div class="p-8 pt-6">
+                            <h3 class="text-xl font-bold text-brand-navy mb-3">Sosial Media</h3>
+                            <p class="text-slate-500 mb-6 text-sm">Manajemen konten, iklan tertarget, dan interaksi audiens untuk membangun brand awareness yang kuat.</p>
+                            <a href="layanan.html" class="text-brand-blue font-semibold text-sm group-hover:underline">Pelajari Lebih Lanjut &nearr;</a>
+                        </div>
+                    </div>
+                    <!-- Layanan 2 -->
+                    <div class="group border border-slate-100 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300">
+                        <div class="h-40 bg-indigo-100 flex items-start justify-start p-6 text-3xl text-indigo-500">🏪</div>
+                        <div class="p-8 pt-6">
+                            <h3 class="text-xl font-bold text-brand-navy mb-3">Marketplace</h3>
+                            <p class="text-slate-500 mb-6 text-sm">Optimasi toko online, SEO produk, dan strategi promosi untuk mendominasi penjualan di e-commerce.</p>
+                            <a href="layanan.html" class="text-brand-blue font-semibold text-sm group-hover:underline">Pelajari Lebih Lanjut &nearr;</a>
+                        </div>
+                    </div>
+                    <!-- Layanan 3 -->
+                    <div class="group border border-slate-100 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300">
+                        <div class="h-40 bg-orange-100 flex items-start justify-start p-6 text-3xl text-orange-500">💡</div>
+                        <div class="p-8 pt-6">
+                            <h3 class="text-xl font-bold text-brand-navy mb-3">Mentoring Bisnis</h3>
+                            <p class="text-slate-500 mb-6 text-sm">Bimbingan eksklusif 1-on-1 untuk merancang model bisnis dan strategi growth hacking yang teruji.</p>
+                            <a href="layanan.html" class="text-brand-blue font-semibold text-sm group-hover:underline">Pelajari Lebih Lanjut &nearr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 7. FOOTER -->
+    <footer class="bg-brand-navy text-slate-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
+            <!-- Footer Col 1 -->
+            <div class="col-span-1">
+                <h4 class="text-white text-xl font-extrabold mb-4">Isee Digital Marketing</h4>
+                <p class="mb-4 text-sm text-slate-400">Sleman, Yogyakarta</p>
+                <p class="flex items-center gap-2 text-sm text-slate-400">📞 +62895-0802-9834</p>
+            </div>
+            
+            <!-- Footer Col 2 -->
+            <div>
+                <h5 class="text-white font-bold mb-4 tracking-wide text-sm uppercase">Navigasi</h5>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Beranda</a></li>
+                    <li><a href="tentang-kami.html" class="hover:text-white transition-colors">Tentang Kami</a></li>
+                    <li><a href="layanan.html" class="hover:text-white transition-colors">Layanan</a></li>
+                </ul>
+            </div>
+            
+            <!-- Footer Col 3 -->
+            <div>
+                <h5 class="text-white font-bold mb-4 tracking-wide text-sm uppercase">Informasi</h5>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li><a href="lowongan.html" class="hover:text-white transition-colors">Lowongan</a></li>
+                    <li><a href="testimoni.html" class="hover:text-white transition-colors">Testimoni</a></li>
+                    <li><a href="artikel.html" class="hover:text-white transition-colors">Artikel</a></li>
+                </ul>
+            </div>
+
+            <!-- Footer Col 4 -->
+            <div>
+                <h5 class="text-white font-bold mb-4 tracking-wide text-sm uppercase">Dukungan</h5>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li><a href="kontak.html" class="hover:text-white transition-colors">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Copyright Bottom -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-700/50 text-xs text-slate-500 flex justify-between items-center">
+            <p>&copy; 2026 Isee Digital Marketing. Sleman, Yogyakarta.</p>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-white transition-colors">Share <span class="ml-1">🔗</span></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Animations -->
+    <script src="assets/animations.js"></script>
+    <script>
+        // Navbar Dynamic Glassmorphism on Scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                navbar.classList.remove('bg-white', 'border-slate-100');
+                navbar.classList.add('bg-white/10', 'backdrop-blur-md', 'border-white/20');
+            } else {
+                navbar.classList.add('bg-white', 'border-slate-100');
+                navbar.classList.remove('bg-white/10', 'backdrop-blur-md', 'border-white/20');
+            }
+        });
+    </script>
+</body>
+</html>

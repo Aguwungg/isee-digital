@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isee Digital Marketing - Artikel & Wawasan</title>
+    
+    <!-- Import Font Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Import Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Konfigurasi Tema Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#046BD2',
+                            navy: '#070C35',
+                            yellow: '#FFB600',
+                            light: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans antialiased text-slate-800 bg-brand-light">
+    <!-- Page Transition Overlay -->
+    <div id="page-transition-overlay" class="fixed inset-0 bg-white z-[9999] transition-opacity duration-500 pointer-events-none opacity-100"></div>
+
+    <!-- 1. TOP BAR PROMO -->
+    <div class="bg-brand-navy text-white text-sm py-2 px-4 flex flex-col sm:flex-row justify-center items-center gap-2 md:gap-6 z-50 relative">
+        <p class="font-medium tracking-wide">15% PROMO MINGGU INI! DAPATKAN DISKON 15%</p>
+        <a href="kontak.html" class="bg-brand-yellow text-brand-navy font-bold py-1 px-4 rounded-full hover:bg-yellow-400 transition-colors shadow-[0_0_10px_rgba(255,182,0,0.3)]">Ambil Promo</a>
+    </div>
+
+    <!-- 2. NAVIGATION BAR (FLOATING GLASSMORPHISM) -->
+    <div class="w-full flex justify-center fixed top-6 z-50 px-4 pointer-events-none">
+        <nav id="navbar" class="pointer-events-auto w-full max-w-6xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-slate-100 rounded-full px-4 sm:px-8 py-3 flex justify-between items-center transition-all duration-300">
+            <!-- Logo -->
+            <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+                <div class="bg-white p-1.5 rounded-full shadow-sm group-hover:shadow-md transition-all">
+                    <img src="assets/logo.png" alt="Logo Isee Digital Marketing" class="h-8 w-auto">
+                </div>
+                <span class="font-extrabold text-lg md:text-xl text-brand-navy tracking-tight group-hover:text-brand-blue transition-colors">Isee Digital</span>
+            </a>
+            
+            <!-- Menu Links (Desktop) -->
+            <div class="hidden lg:flex space-x-1 items-center text-sm font-medium relative" id="nav-links-container">
+                <div id="nav-indicator" class="absolute bg-brand-blue rounded-full transition-all duration-300 ease-out shadow-md pointer-events-none opacity-0" style="z-index: 0;"></div>
+                <a href="index.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Beranda</a>
+                <a href="tentang-kami.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Tentang Kami</a>
+                <a href="layanan.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Layanan</a>
+                <a href="lowongan.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Lowongan</a>
+                <a href="testimoni.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Testimoni</a>
+                <a href="artikel.html" class="nav-item relative z-10 text-white px-5 py-2 rounded-full font-bold transition-colors duration-300" data-active="true">Artikel</a>
+                <a href="kontak.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Kontak</a>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="hidden lg:block ml-2">
+                <a href="kontak.html" class="bg-brand-navy text-white px-6 py-2.5 rounded-full font-bold hover:bg-brand-blue shadow-[0_4px_15px_rgba(7,12,53,0.2)] hover:shadow-[0_4px_20px_rgba(4,107,210,0.4)] transition-all duration-300 transform hover:-translate-y-0.5">Hubungi Kami</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="lg:hidden text-brand-navy p-2 hover:bg-white/50 rounded-full transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+    </div>
+
+    <main class="pb-24">
+        <!-- 3. HERO SECTION ARTIKEL -->
+        <section class="bg-brand-navy pt-20 pb-24 text-center px-4">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">Artikel & Wawasan Digital</h1>
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+                Pelajari strategi terbaru dan tips seputar dunia digital marketing untuk bisnis Anda.
+            </p>
+        </section>
+
+        <!-- 4. PENCARIAN & FILTER -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-10 mb-12">
+            <div class="bg-white rounded-full shadow-md border border-slate-100 p-2 flex flex-col md:flex-row justify-between items-center gap-4">
+                <!-- Search Bar -->
+                <div class="flex items-center w-full md:w-1/3 bg-slate-50 rounded-full px-4 py-2">
+                    <span class="text-slate-400">🔍</span>
+                    <input type="text" placeholder="Cari artikel..." class="bg-transparent border-none outline-none w-full text-sm ml-2 text-slate-600 placeholder-slate-400">
+                </div>
+                
+                <!-- Filter Pills (Ditambahkan ID untuk JavaScript) -->
+                <div class="flex flex-wrap justify-center gap-2 px-2 pb-2 md:pb-0">
+                    <button id="filter-semua" class="bg-brand-blue text-white px-5 py-1.5 rounded-full text-sm font-semibold hover:shadow-md transition-all">Semua</button>
+                    <button id="filter-digital" class="bg-blue-50 text-brand-blue px-5 py-1.5 rounded-full text-sm font-semibold hover:bg-brand-blue hover:text-white transition-all">Digital Marketing</button>
+                    <button id="filter-iklan" class="bg-blue-50 text-brand-blue px-5 py-1.5 rounded-full text-sm font-semibold hover:bg-brand-blue hover:text-white transition-all">Iklan Online</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. GRID ARTIKEL -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-12">
+                
+                <!-- Artikel 1 -->
+                <div class="bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 article-card">
+                    <a href="baca-artikel.html" class="block relative">
+                        <img src="https://via.placeholder.com/600x400/E2E8F0/64748B?text=Ilustrasi+SEO+Tim" alt="Thumbnail Artikel" class="w-full h-56 object-cover rounded-t-3xl">
+                        <!-- Date Badge Overlapping -->
+                        <div class="absolute -bottom-6 left-6 w-14 h-14 bg-white rounded-full shadow-md flex flex-col justify-center items-center border border-slate-50">
+                            <span class="text-brand-blue font-extrabold text-lg leading-none">06</span>
+                            <span class="text-slate-400 text-[10px] uppercase font-bold mt-0.5">Agu</span>
+                        </div>
+                    </a>
+                    <div class="p-6 pt-10">
+                        <div class="flex items-center gap-2 text-xs text-slate-400 mb-3 font-medium">
+                            <span class="flex items-center gap-1">👤 Naillah Insyira Leurima</span>
+                            <span>•</span>
+                            <span class="flex items-center gap-1 category-label">📁 Digital Marketing</span>
+                        </div>
+                        <a href="baca-artikel.html"><h3 class="font-bold text-brand-navy text-lg leading-snug hover:text-brand-blue transition-colors line-clamp-2">5 Strategi SEO Terbaik Tahun 2024 Untuk Meningkatkan Traffic</h3></a>
+                    </div>
+                </div>
+
+                <!-- Artikel 2 -->
+                <div class="bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 article-card">
+                    <a href="baca-artikel.html" class="block relative">
+                        <img src="https://via.placeholder.com/600x400/E2E8F0/64748B?text=Ilustrasi+Facebook+Ads" alt="Thumbnail Artikel" class="w-full h-56 object-cover rounded-t-3xl">
+                        <div class="absolute -bottom-6 left-6 w-14 h-14 bg-white rounded-full shadow-md flex flex-col justify-center items-center border border-slate-50">
+                            <span class="text-brand-blue font-extrabold text-lg leading-none">05</span>
+                            <span class="text-slate-400 text-[10px] uppercase font-bold mt-0.5">Agu</span>
+                        </div>
+                    </a>
+                    <div class="p-6 pt-10">
+                        <div class="flex items-center gap-2 text-xs text-slate-400 mb-3 font-medium">
+                            <span class="flex items-center gap-1">👤 Naillah Insyira Leurima</span>
+                            <span>•</span>
+                            <span class="flex items-center gap-1 category-label">📁 Iklan Online</span>
+                        </div>
+                        <a href="baca-artikel.html"><h3 class="font-bold text-brand-navy text-lg leading-snug hover:text-brand-blue transition-colors line-clamp-2">Panduan Lengkap Memaksimalkan ROI pada Facebook Ads</h3></a>
+                    </div>
+                </div>
+
+                <!-- Artikel 3 -->
+                <div class="bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 article-card">
+                    <a href="baca-artikel.html" class="block relative">
+                        <img src="https://via.placeholder.com/600x400/E2E8F0/64748B?text=Ilustrasi+Data+Driven" alt="Thumbnail Artikel" class="w-full h-56 object-cover rounded-t-3xl">
+                        <div class="absolute -bottom-6 left-6 w-14 h-14 bg-white rounded-full shadow-md flex flex-col justify-center items-center border border-slate-50">
+                            <span class="text-brand-blue font-extrabold text-lg leading-none">02</span>
+                            <span class="text-slate-400 text-[10px] uppercase font-bold mt-0.5">Agu</span>
+                        </div>
+                    </a>
+                    <div class="p-6 pt-10">
+                        <div class="flex items-center gap-2 text-xs text-slate-400 mb-3 font-medium">
+                            <span class="flex items-center gap-1">👤 Naillah Insyira Leurima</span>
+                            <span>•</span>
+                            <span class="flex items-center gap-1 category-label">📁 Digital Marketing</span>
+                        </div>
+                        <a href="baca-artikel.html"><h3 class="font-bold text-brand-navy text-lg leading-snug hover:text-brand-blue transition-colors line-clamp-2">Mengapa Data-Driven Marketing Adalah Kunci Kesuksesan Bisnis</h3></a>
+                    </div>
+                </div>
+
+                <!-- Artikel 4 -->
+                <div class="bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 article-card">
+                    <a href="baca-artikel.html" class="block relative">
+                        <img src="https://via.placeholder.com/600x400/E2E8F0/64748B?text=Ilustrasi+Copywriting" alt="Thumbnail Artikel" class="w-full h-56 object-cover rounded-t-3xl">
+                        <div class="absolute -bottom-6 left-6 w-14 h-14 bg-white rounded-full shadow-md flex flex-col justify-center items-center border border-slate-50">
+                            <span class="text-brand-blue font-extrabold text-lg leading-none">28</span>
+                            <span class="text-slate-400 text-[10px] uppercase font-bold mt-0.5">Jul</span>
+                        </div>
+                    </a>
+                    <div class="p-6 pt-10">
+                        <div class="flex items-center gap-2 text-xs text-slate-400 mb-3 font-medium">
+                            <span class="flex items-center gap-1">👤 Naillah Insyira Leurima</span>
+                            <span>•</span>
+                            <span class="flex items-center gap-1 category-label">📁 Konten</span>
+                        </div>
+                        <a href="baca-artikel.html"><h3 class="font-bold text-brand-navy text-lg leading-snug hover:text-brand-blue transition-colors line-clamp-2">Pentingnya Copywriting yang Persuasif dalam Landing Page</h3></a>
+                    </div>
+                </div>
+
+                <!-- Artikel 5 -->
+                <div class="bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 article-card">
+                    <a href="baca-artikel.html" class="block relative">
+                        <img src="https://via.placeholder.com/600x400/E2E8F0/64748B?text=Ilustrasi+Media+Sosial" alt="Thumbnail Artikel" class="w-full h-56 object-cover rounded-t-3xl">
+                        <div class="absolute -bottom-6 left-6 w-14 h-14 bg-white rounded-full shadow-md flex flex-col justify-center items-center border border-slate-50">
+                            <span class="text-brand-blue font-extrabold text-lg leading-none">20</span>
+                            <span class="text-slate-400 text-[10px] uppercase font-bold mt-0.5">Jul</span>
+                        </div>
+                    </a>
+                    <div class="p-6 pt-10">
+                        <div class="flex items-center gap-2 text-xs text-slate-400 mb-3 font-medium">
+                            <span class="flex items-center gap-1">👤 Naillah Insyira Leurima</span>
+                            <span>•</span>
+                            <span class="flex items-center gap-1 category-label">📁 Media Sosial</span>
+                        </div>
+                        <a href="baca-artikel.html"><h3 class="font-bold text-brand-navy text-lg leading-snug hover:text-brand-blue transition-colors line-clamp-2">Trend Media Sosial yang Wajib Diikuti Brand Anda Tahun Ini</h3></a>
+                    </div>
+                </div>
+
+                <!-- Artikel 6 -->
+                <div class="bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 article-card">
+                    <a href="baca-artikel.html" class="block relative">
+                        <img src="https://via.placeholder.com/600x400/E2E8F0/64748B?text=Ilustrasi+Google+Ads" alt="Thumbnail Artikel" class="w-full h-56 object-cover rounded-t-3xl">
+                        <div class="absolute -bottom-6 left-6 w-14 h-14 bg-white rounded-full shadow-md flex flex-col justify-center items-center border border-slate-50">
+                            <span class="text-brand-blue font-extrabold text-lg leading-none">15</span>
+                            <span class="text-slate-400 text-[10px] uppercase font-bold mt-0.5">Jul</span>
+                        </div>
+                    </a>
+                    <div class="p-6 pt-10">
+                        <div class="flex items-center gap-2 text-xs text-slate-400 mb-3 font-medium">
+                            <span class="flex items-center gap-1">👤 Naillah Insyira Leurima</span>
+                            <span>•</span>
+                            <span class="flex items-center gap-1 category-label">📁 Iklan Online</span>
+                        </div>
+                        <a href="baca-artikel.html"><h3 class="font-bold text-brand-navy text-lg leading-snug hover:text-brand-blue transition-colors line-clamp-2">Tips Mengoptimalkan Google Ads Untuk UKM</h3></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 6. PAGINATION -->
+            <div class="mt-16 flex justify-center items-center gap-2" id="pagination-container">
+                <button class="w-8 h-8 flex items-center justify-center rounded-full text-slate-400 hover:text-brand-navy transition-colors">&lsaquo;</button>
+                <button class="page-btn w-8 h-8 flex items-center justify-center rounded-full bg-brand-blue text-white font-bold shadow-md">1</button>
+                <button class="page-btn w-8 h-8 flex items-center justify-center rounded-full text-slate-500 hover:bg-slate-200 transition-colors font-medium">2</button>
+                <button class="page-btn w-8 h-8 flex items-center justify-center rounded-full text-slate-500 hover:bg-slate-200 transition-colors font-medium">3</button>
+                <button class="w-8 h-8 flex items-center justify-center rounded-full text-slate-400 hover:text-brand-navy transition-colors">&rsaquo;</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- 7. FOOTER -->
+    <footer class="bg-brand-navy text-slate-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
+            <!-- Footer Col 1 -->
+            <div class="col-span-1">
+                <h4 class="text-white text-xl font-extrabold mb-4 flex items-center gap-2">
+                    <span class="text-2xl">🚀</span> Isee Digital
+                </h4>
+                <p class="mb-4 text-sm text-slate-400 leading-relaxed">Partner strategis digital marketing Anda untuk pertumbuhan bisnis yang eksponensial.</p>
+                <p class="mt-8 text-xs text-slate-500">&copy; 2026 Isee Digital Marketing.<br>Sleman, Yogyakarta.</p>
+            </div>
+            
+            <!-- Footer Col 2 -->
+            <div>
+                <h5 class="text-white font-bold mb-4 tracking-wide text-sm uppercase">Perusahaan</h5>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Beranda</a></li>
+                    <li><a href="tentang-kami.html" class="hover:text-white transition-colors">Tentang Kami</a></li>
+                    <li><a href="testimoni.html" class="hover:text-white transition-colors">Testimoni</a></li>
+                </ul>
+            </div>
+            
+            <!-- Footer Col 3 -->
+            <div>
+                <h5 class="text-white font-bold mb-4 tracking-wide text-sm uppercase">Layanan</h5>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li><a href="layanan.html" class="hover:text-white transition-colors">Layanan</a></li>
+                    <li><a href="artikel.html" class="hover:text-white transition-colors">Artikel</a></li>
+                    <li><a href="lowongan.html" class="hover:text-white transition-colors">Lowongan</a></li>
+                </ul>
+            </div>
+
+            <!-- Footer Col 4 -->
+            <div>
+                <h5 class="text-white font-bold mb-4 tracking-wide text-sm uppercase">Bantuan</h5>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li><a href="kontak.html" class="hover:text-white transition-colors">Kontak</a></li>
+                    <li class="flex items-center gap-2 mt-4"><span class="text-brand-blue">✉️</span> info@iseedigital.com</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT JAVASCRIPT YANG SUDAH DIPERBAIKI -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. Logika Filter Kategori yang Lebih Akurat
+            const btnSemua = document.getElementById("filter-semua");
+            const btnDigital = document.getElementById("filter-digital");
+            const btnIklan = document.getElementById("filter-iklan");
+            const allBtns = [btnSemua, btnDigital, btnIklan];
+            
+            const articleCards = document.querySelectorAll(".article-card");
+
+            function setActiveButton(activeBtn) {
+                // Reset semua tombol ke gaya default
+                allBtns.forEach(btn => {
+                    btn.className = "bg-blue-50 text-brand-blue px-5 py-1.5 rounded-full text-sm font-semibold hover:bg-brand-blue hover:text-white transition-all";
+                });
+                // Beri gaya aktif (biru solid) pada tombol yang diklik
+                activeBtn.className = "bg-brand-blue text-white px-5 py-1.5 rounded-full text-sm font-semibold hover:shadow-md transition-all";
+            }
+
+            function filterArticles(keyword) {
+                articleCards.forEach(card => {
+                    const categoryElement = card.querySelector(".category-label");
+                    if (categoryElement) {
+                        const categoryText = categoryElement.innerText.toLowerCase();
+                        if (keyword === "semua" || categoryText.includes(keyword)) {
+                            card.style.display = "block";
+                        } else {
+                            card.style.display = "none";
+                        }
+                    }
+                });
+            }
+
+            // Pasang event listener (tunggu sampai diklik)
+            if(btnSemua && btnDigital && btnIklan) {
+                btnSemua.addEventListener("click", () => { setActiveButton(btnSemua); filterArticles("semua"); });
+                btnDigital.addEventListener("click", () => { setActiveButton(btnDigital); filterArticles("digital marketing"); });
+                btnIklan.addEventListener("click", () => { setActiveButton(btnIklan); filterArticles("iklan online"); });
+            }
+
+            // 2. Logika Pagination (Perubahan Warna Saat Diklik)
+            const pageButtons = document.querySelectorAll(".page-btn");
+            pageButtons.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    // Reset semua tombol halaman
+                    pageButtons.forEach(b => {
+                        b.className = "page-btn w-8 h-8 flex items-center justify-center rounded-full text-slate-500 hover:bg-slate-200 transition-colors font-medium";
+                    });
+                    // Aktifkan tombol yang diklik
+                    btn.className = "page-btn w-8 h-8 flex items-center justify-center rounded-full bg-brand-blue text-white font-bold shadow-md";
+                });
+            });
+        });
+    </script>
+    <!-- Global Animations -->
+    <script src="assets/animations.js"></script>
+    <script>
+        // Navbar Dynamic Glassmorphism on Scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                navbar.classList.remove('bg-white', 'border-slate-100');
+                navbar.classList.add('bg-white/10', 'backdrop-blur-md', 'border-white/20');
+            } else {
+                navbar.classList.add('bg-white', 'border-slate-100');
+                navbar.classList.remove('bg-white/10', 'backdrop-blur-md', 'border-white/20');
+            }
+        });
+    </script>
+</body>
+</html>
