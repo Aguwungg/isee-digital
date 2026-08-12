@@ -38,11 +38,7 @@
     <!-- Page Transition Overlay -->
     <div id="page-transition-overlay" class="fixed inset-0 bg-white z-[9999] transition-opacity duration-500 pointer-events-none opacity-100"></div>
 
-    <!-- 1. TOP BAR PROMO -->
-    <div class="bg-brand-navy text-white text-sm py-2 px-4 flex flex-col sm:flex-row justify-center items-center gap-2 md:gap-6 z-50 relative">
-        <p class="font-medium tracking-wide">15% PROMO MINGGU INI! DAPATKAN DISKON 15%</p>
-        <a href="kontak.html" class="bg-brand-yellow text-brand-navy font-bold py-1 px-4 rounded-full hover:bg-yellow-400 transition-colors shadow-[0_0_10px_rgba(255,182,0,0.3)]">Ambil Promo</a>
-    </div>
+
 
     <!-- 2. NAVIGATION BAR (FLOATING GLASSMORPHISM) -->
     <div class="w-full flex justify-center fixed top-6 z-50 px-4 pointer-events-none">
@@ -82,11 +78,44 @@
     </div>
 
     <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="#" class="fixed bottom-8 right-8 z-50 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 hover:scale-110 transition-all duration-300">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12.031 0C5.383 0 0 5.383 0 12.031c0 2.656.844 5.109 2.391 7.109L.469 24l5.016-1.578A11.96 11.96 0 0012.031 24c6.648 0 12.031-5.383 12.031-12.031S18.679 0 12.031 0zm4.015 17.203c-.656 1.844-3.328 2.016-4.406 2.016-2.531 0-5.813-1.641-7.875-4.406-1.922-2.578-2.063-5.203-1.078-6.844.484-.813 1.156-1.094 1.547-1.094.344 0 .688.016.984.016.328 0 .766-.125 1.188.859.438 1.031 1.188 2.922 1.297 3.125.109.203.188.438.047.672-.141.234-.219.375-.438.641-.219.266-.453.563-.641.766-.203.219-.422.453-.188.844.234.391 1.031 1.703 2.219 2.875 1.531 1.516 2.813 1.984 3.203 2.188.391.203.625.172.859-.078.234-.25.984-1.156 1.25-1.547.266-.391.531-.328.891-.234.359.094 2.266 1.063 2.656 1.266.391.203.656.313.75.484.094.172.094.984-.563 2.828z"/>
-        </svg>
-    </a>
+<!-- FLOATING PROMO WIDGET (KIRI BAWAH) -->
+    <div id="floating-promo" class="fixed bottom-8 left-4 sm:left-8 z-50 w-[280px] bg-white rounded-2xl shadow-[0_10px_40px_rgba(4,107,210,0.15)] border border-slate-100 p-4 transition-all duration-500 transform translate-y-0 opacity-100">
+        <!-- Tombol Close -->
+        <button onclick="document.getElementById('floating-promo').style.display='none'" class="absolute top-2 right-2 text-slate-400 hover:text-brand-navy bg-slate-50 hover:bg-slate-100 rounded-full p-1 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+        
+        <div class="flex items-start gap-3">
+            <!-- Ikon Api Animasi -->
+            <div class="bg-brand-yellow/20 text-brand-yellow p-2 rounded-xl text-xl animate-pulse">
+                🔥
+            </div>
+            <!-- Konten -->
+            <div>
+                <span class="inline-block bg-brand-yellow text-brand-navy text-[10px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider mb-1">Diskon 15%</span>
+                <h4 class="font-bold text-brand-navy text-sm mb-1 leading-tight">Promo Berakhir Dalam:</h4>
+                
+                <!-- COUNTDOWN TIMER SECTION -->
+                <div class="flex gap-1.5 mb-3 mt-2">
+                    <div class="bg-red-50 text-red-600 font-bold px-2 py-1 rounded-lg text-xs text-center border border-red-100 w-10 shadow-inner">
+                        <span id="promo-hours">23</span><span class="block text-[8px] font-semibold text-red-400 mt-0.5 uppercase tracking-wide">JAM</span>
+                    </div>
+                    <div class="text-slate-300 font-bold self-center text-xs -mt-3">:</div>
+                    <div class="bg-red-50 text-red-600 font-bold px-2 py-1 rounded-lg text-xs text-center border border-red-100 w-10 shadow-inner">
+                        <span id="promo-minutes">59</span><span class="block text-[8px] font-semibold text-red-400 mt-0.5 uppercase tracking-wide">MNT</span>
+                    </div>
+                    <div class="text-slate-300 font-bold self-center text-xs -mt-3">:</div>
+                    <div class="bg-red-50 text-red-600 font-bold px-2 py-1 rounded-lg text-xs text-center border border-red-100 w-10 shadow-inner">
+                        <span id="promo-seconds">59</span><span class="block text-[8px] font-semibold text-red-400 mt-0.5 uppercase tracking-wide">DTK</span>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/6289508029834?text=Halo%20Admin%20Isee%20Digital,%20saya%20ingin%20mengklaim%20Promo%20Diskon%2015%25!" target="_blank" class="inline-flex items-center justify-center gap-1.5 w-full bg-brand-blue hover:bg-blue-700 text-white font-bold text-xs py-2.5 rounded-xl transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                    Klaim Sekarang <span class="text-sm">→</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <main>
         <!-- 3. HERO SECTION LOWONGAN -->
@@ -251,6 +280,49 @@
                 navbar.classList.add('bg-white', 'border-slate-100');
                 navbar.classList.remove('bg-white/10', 'backdrop-blur-md', 'border-white/20');
             }
+        });
+    </script>
+    <!-- Script Evergreen Countdown Timer -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            function startPromoTimer() {
+                const timerDuration = 24 * 60 * 60 * 1000; // 24 Jam dalam milidetik
+                let endTime = localStorage.getItem('isee_promo_end_time');
+
+                // Jika belum ada waktu tersimpan, atau waktunya sudah lewat (kadaluarsa)
+                if (!endTime || Date.now() > parseInt(endTime)) {
+                    endTime = Date.now() + timerDuration;
+                    localStorage.setItem('isee_promo_end_time', endTime);
+                }
+
+                function updateTimer() {
+                    const now = Date.now();
+                    const distance = endTime - now;
+
+                    // Jika hitung mundur selesai (reset ulang)
+                    if (distance <= 0) {
+                        endTime = Date.now() + timerDuration;
+                        localStorage.setItem('isee_promo_end_time', endTime);
+                    }
+
+                    // Perhitungan Jam, Menit, dan Detik
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    // Tampilkan ke dalam elemen HTML (tambahkan angka 0 di depan jika di bawah 10)
+                    document.getElementById('promo-hours').innerText = hours.toString().padStart(2, '0');
+                    document.getElementById('promo-minutes').innerText = minutes.toString().padStart(2, '0');
+                    document.getElementById('promo-seconds').innerText = seconds.toString().padStart(2, '0');
+                }
+
+                // Jalankan fungsi update setiap 1 detik (1000ms)
+                updateTimer(); // Pemanggilan pertama agar tidak delay
+                setInterval(updateTimer, 1000);
+            }
+
+            // Inisialisasi Timer
+            startPromoTimer();
         });
     </script>
 </body>
