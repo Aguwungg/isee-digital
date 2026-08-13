@@ -1,16 +1,84 @@
 document.addEventListener('DOMContentLoaded', () => {
     const articleGrid = document.getElementById('article-grid');
     const paginationContainer = document.getElementById('pagination-container');
+    const searchInput = document.getElementById('search-input');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+
     if (!articleGrid || !paginationContainer) return;
 
     const itemsPerPage = 6;
     let currentPage = 1;
+    let currentCategory = 'Semua';
+    let searchQuery = '';
+    let filteredArticles = [...dummyArticles];
+
+    // Initialize
+    applyFilters();
+
+    // Event Listener for Search
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value.toLowerCase();
+            currentPage = 1; // Reset to page 1 on new search
+            applyFilters();
+        });
+    }
+
+    // Event Listener for Category Buttons
+    if (filterButtons.length > 0) {
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all
+                filterButtons.forEach(b => {
+                    b.classList.remove('bg-brand-blue', 'text-white', 'hover:shadow-md');
+                    b.classList.add('bg-blue-50', 'text-brand-blue', 'hover:bg-brand-blue', 'hover:text-white');
+                });
+                
+                // Add active class to clicked button
+                btn.classList.remove('bg-blue-50', 'text-brand-blue', 'hover:bg-brand-blue', 'hover:text-white');
+                btn.classList.add('bg-brand-blue', 'text-white', 'hover:shadow-md');
+                
+                currentCategory = btn.getAttribute('data-category');
+                currentPage = 1; // Reset to page 1 on new filter
+                applyFilters();
+            });
+        });
+    }
+
+    function applyFilters() {
+        filteredArticles = dummyArticles.filter(article => {
+            const matchCategory = currentCategory === 'Semua' || article.category === currentCategory;
+            const titleMatch = article.title.toLowerCase().includes(searchQuery);
+            const excerptMatch = article.excerpt.toLowerCase().includes(searchQuery);
+            const matchSearch = searchQuery === '' || titleMatch || excerptMatch;
+            
+            return matchCategory && matchSearch;
+        });
+        
+        renderArticles(currentPage);
+    }
 
     function renderArticles(page) {
         articleGrid.innerHTML = '';
+        
+        if (filteredArticles.length === 0) {
+            // Render Empty State
+            articleGrid.innerHTML = `
+                <div class="col-span-full flex flex-col items-center justify-center py-20 text-center">
+                    <svg class="w-24 h-24 text-slate-200 mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    <h3 class="text-2xl font-bold text-brand-navy mb-2">Pencarian Tidak Ditemukan</h3>
+                    <p class="text-slate-500 max-w-md mx-auto">Maaf, kami tidak menemukan artikel untuk kategori "<span class="font-semibold text-brand-navy">${currentCategory}</span>" dengan kata kunci "<span class="font-semibold text-brand-navy">${searchQuery}</span>".</p>
+                </div>
+            `;
+            paginationContainer.innerHTML = '';
+            return;
+        }
+
         const start = (page - 1) * itemsPerPage;
         const end = start + itemsPerPage;
-        const paginatedItems = dummyArticles.slice(start, end);
+        const paginatedItems = filteredArticles.slice(start, end);
 
         paginatedItems.forEach(article => {
             // Extract day and month from date
@@ -39,12 +107,15 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             articleGrid.appendChild(card);
         });
+        
         renderPagination();
     }
 
     function renderPagination() {
         paginationContainer.innerHTML = '';
-        const totalPages = Math.ceil(dummyArticles.length / itemsPerPage);
+        const totalPages = Math.ceil(filteredArticles.length / itemsPerPage);
+        
+        if (totalPages <= 1) return; // Hide pagination if 1 page or less
 
         // Prev button
         const prevBtn = document.createElement('button');
@@ -88,7 +159,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         paginationContainer.appendChild(nextBtn);
     }
-
-    // Initial render
-    renderArticles(currentPage);
 });
