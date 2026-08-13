@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.className = "bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 article-card";
             card.innerHTML = `
                 <a href="baca-artikel.html?id=${article.id}" class="block relative">
-                    <img src="${article.image}" alt="Thumbnail Artikel" class="w-full h-56 object-cover rounded-t-3xl">
+                    <img src="${article.image}" alt="${article.title}" class="w-full h-56 object-cover rounded-t-3xl">
                     <div class="absolute -bottom-6 left-6 w-14 h-14 bg-white rounded-full shadow-md flex flex-col justify-center items-center border border-slate-50">
                         <span class="text-brand-blue font-extrabold text-lg leading-none">${day}</span>
                         <span class="text-slate-400 text-[10px] uppercase font-bold mt-0.5">${month}</span>
