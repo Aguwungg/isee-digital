@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F1F5F9"/>
+      <stop offset="50%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+
+    <linearGradient id="jacketGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F766E"/>
+      <stop offset="50%" stop-color="#046BD2"/>
+      <stop offset="100%" stop-color="#070C35"/>
+    </linearGradient>
+
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5D0C5"/>
+      <stop offset="100%" stop-color="#E8B4A2"/>
+    </linearGradient>
+
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D1F18"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+
+    <linearGradient id="accentGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#818CF8" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="15" stdDeviation="20" flood-color="#070C35" flood-opacity="0.15"/>
+    </filter>
+    
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="700" rx="32" fill="url(#bgGrad)"/>
+  
+  <!-- Decorative Modern Anti-Gravity Geometric Shapes -->
+  <circle cx="500" cy="120" r="140" fill="url(#accentGlow)"/>
+  <circle cx="100" cy="550" r="120" fill="url(#accentGlow)"/>
+
+  <!-- Minimalist Grid Dots Backdrop -->
+  <pattern id="dotPattern" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+    <circle cx="3" cy="3" r="1.5" fill="#94A3B8" opacity="0.3"/>
+  </pattern>
+  <rect width="600" height="700" fill="url(#dotPattern)"/>
+
+  <!-- Gen Z Professional Figure Artwork -->
+  <g id="figure" filter="url(#shadow)">
+    <!-- Shoulders & Body / Stylish Smart Blazer -->
+    <path d="M120 700 L120 540 C120 450 180 410 300 410 C420 410 480 450 480 540 L480 700 Z" fill="url(#jacketGrad)"/>
+
+    <!-- Lapels of Blazer -->
+    <path d="M230 420 L300 560 L200 700 Z" fill="#0456A8" opacity="0.9"/>
+    <path d="M370 420 L300 560 L400 700 Z" fill="#044D94" opacity="0.9"/>
+
+    <!-- Inner Shirt (Black Minimalist Top) -->
+    <path d="M250 420 L350 420 L330 520 L270 520 Z" fill="#0F172A"/>
+
+    <!-- Silver Chain Necklace (Gen Z Style Accent) -->
+    <path d="M265 425 Q300 460 335 425" fill="none" stroke="#E2E8F0" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="300" cy="445" r="5" fill="#E2E8F0"/>
+
+    <!-- Neck -->
+    <rect x="270" y="320" width="60" height="110" rx="10" fill="url(#skinGrad)"/>
+    <path d="M270 380 Q300 400 330 380 L330 420 L270 420 Z" fill="#D99B88" opacity="0.4"/>
+
+    <!-- Head & Jawline -->
+    <path d="M220 230 C220 150 380 150 380 230 L380 270 C380 340 330 370 300 370 C270 370 220 340 220 270 Z" fill="url(#skinGrad)"/>
+
+    <!-- Ears -->
+    <circle cx="218" cy="265" r="14" fill="url(#skinGrad)"/>
+    <circle cx="382" cy="265" r="14" fill="url(#skinGrad)"/>
+    <!-- Hoop Earrings (Gen Z Detail) -->
+    <circle cx="214" cy="275" r="8" fill="none" stroke="#FFB600" stroke-width="3"/>
+    <circle cx="386" cy="275" r="8" fill="none" stroke="#FFB600" stroke-width="3"/>
+
+    <!-- Stylish Gen Z Curly/Textured Hair -->
+    <path d="M200 240 C190 180 220 110 300 110 C380 110 410 180 400 240 C420 200 410 130 360 110 C330 90 270 90 240 110 C190 130 180 200 200 240 Z" fill="url(#hairGrad)"/>
+    <circle cx="210" cy="180" r="30" fill="url(#hairGrad)"/>
+    <circle cx="390" cy="180" r="30" fill="url(#hairGrad)"/>
+    <circle cx="230" cy="140" r="35" fill="url(#hairGrad)"/>
+    <circle cx="370" cy="140" r="35" fill="url(#hairGrad)"/>
+    <circle cx="300" cy="120" r="40" fill="url(#hairGrad)"/>
+
+    <!-- Face Details: Eyebrows -->
+    <path d="M245 230 Q265 220 285 230" fill="none" stroke="#2D1F18" stroke-width="4" stroke-linecap="round"/>
+    <path d="M315 230 Q335 220 355 230" fill="none" stroke="#2D1F18" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Eyes (Confident, Sharp, Friendly) -->
+    <ellipse cx="265" cy="250" rx="12" ry="8" fill="#FFFFFF"/>
+    <circle cx="266" cy="250" r="6" fill="#0F172A"/>
+    <circle cx="268" cy="248" r="2" fill="#FFFFFF"/>
+
+    <ellipse cx="335" cy="250" rx="12" ry="8" fill="#FFFFFF"/>
+    <circle cx="334" cy="250" r="6" fill="#0F172A"/>
+    <circle cx="336" cy="248" r="2" fill="#FFFFFF"/>
+
+    <!-- Nose -->
+    <path d="M296 260 Q300 280 304 280" fill="none" stroke="#D99B88" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Confident Warm Smile -->
+    <path d="M260 305 Q300 340 340 305" fill="none" stroke="#2D1F18" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M263 306 Q300 335 337 306 Z" fill="#FFFFFF"/>
+
+    <!-- Glassmorphism Floating Badge Overlay inside Vector -->
+    <g transform="translate(60, 480)" filter="url(#shadow)">
+      <rect width="180" height="60" rx="16" fill="#FFFFFF" fill-opacity="0.9" stroke="#FFFFFF" stroke-width="1.5"/>
+      <circle cx="30" cy="30" r="16" fill="#046BD2"/>
+      <path d="M25 30 L28 34 L36 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="56" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="12" fill="#070C35">Agensi Digital</text>
+      <text x="56" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="10" fill="#64748B">Terpercaya &amp; Terukur</text>
+    </g>
+  </g>
+
+  <!-- Ambient Light Highlights -->
+  <circle cx="480" cy="200" r="6" fill="#FFB600" filter="url(#softGlow)"/>
+  <circle cx="120" cy="300" r="8" fill="#046BD2" filter="url(#softGlow)"/>
+</svg>
