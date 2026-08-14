@@ -19,7 +19,7 @@
     <!-- Import Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Konfigurasi Tema Tailwind -->
+    <!-- Konfigurasi Tema Tailwind & Anti-Gravity Keyframe Animations -->
     <script>
         tailwind.config = {
             theme: {
@@ -39,37 +39,61 @@
             }
         }
     </script>
+    <style>
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(2deg); }
+        }
+        @keyframes floatReverse {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(12px) rotate(-2deg); }
+        }
+        @keyframes floatPulse {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-8px) scale(1.04); }
+        }
+        .animate-float-slow {
+            animation: floatSlow 4.5s ease-in-out infinite;
+        }
+        .animate-float-reverse {
+            animation: floatReverse 5.5s ease-in-out infinite;
+        }
+        .animate-float-pulse {
+            animation: floatPulse 4s ease-in-out infinite;
+        }
+    </style>
 </head>
-<body class="font-sans antialiased text-slate-800 bg-brand-light">
+<body class="font-sans antialiased text-slate-800 bg-brand-light overflow-x-hidden">
     <!-- Page Transition Overlay -->
     <div id="page-transition-overlay" class="fixed inset-0 bg-white z-[9999] transition-opacity duration-500 pointer-events-none opacity-100"></div>
 
 
 
     <!-- 2. NAVIGATION BAR (FLOATING GLASSMORPHISM) -->
-    <div class="w-full flex justify-center fixed top-6 z-50 px-4 pointer-events-none">
-        <nav id="navbar" class="pointer-events-auto w-full max-w-6xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-slate-100 rounded-full px-4 sm:px-8 py-3 flex justify-between items-center transition-all duration-300">
+    <div class="w-full flex justify-center fixed top-6 z-50 px-4 sm:px-6 pointer-events-none">
+        <nav id="navbar" class="pointer-events-auto w-full max-w-6xl bg-white shadow-[0_8px_30px_rgba(7,12,53,0.08)] border border-slate-100 rounded-full px-4 sm:px-6 py-2.5 flex justify-between items-center transition-all duration-300">
             <!-- Logo -->
             <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
-                <div class="bg-white p-1.5 rounded-full shadow-sm group-hover:shadow-md transition-all">
+                <div class="bg-slate-50 p-1.5 rounded-full shadow-sm group-hover:shadow-md group-hover:bg-blue-50 transition-all duration-300">
                     <img src="assets/logo.png" alt="Logo Isee Digital Marketing" class="h-8 w-auto">
                 </div>
-                <span class="font-extrabold text-lg md:text-xl text-brand-navy tracking-tight group-hover:text-brand-blue transition-colors">Isee Digital</span>
+                <span class="font-extrabold text-base md:text-lg text-brand-navy tracking-tight group-hover:text-brand-blue transition-colors">Isee Digital</span>
             </a>
             
             <!-- Menu Links (Desktop) -->
-            <div class="hidden lg:flex space-x-1 items-center text-sm font-medium relative" id="nav-links-container">
+            <div class="hidden lg:flex items-center gap-1 text-sm font-medium relative py-1" id="nav-links-container">
                 <div id="nav-indicator" class="absolute bg-brand-blue rounded-full transition-all duration-300 ease-out shadow-md pointer-events-none opacity-0" style="z-index: 0;"></div>
-                <a href="index.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Beranda</a>
-                <a href="tentang-kami.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Tentang Kami</a>
-                <a href="layanan.html" class="nav-item relative z-10 text-white px-5 py-2 rounded-full font-bold transition-colors duration-300" data-active="true">Layanan</a>
-                <a href="lowongan.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Lowongan</a>
-                <a href="testimoni.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Testimoni</a>
-                <a href="artikel.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Artikel</a>
-                <a href="kontak.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Kontak</a>
+                <a href="index.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-colors duration-300" data-active="false">Beranda</a>
+                <a href="tentang-kami.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-colors duration-300" data-active="false">Tentang Kami</a>
+                <a href="layanan.html" class="nav-item relative z-10 text-white px-5 py-2 rounded-full text-xs font-bold tracking-wide transition-colors duration-300" data-active="true">Layanan</a>
+                <a href="lowongan.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-colors duration-300" data-active="false">Lowongan</a>
+                <a href="testimoni.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-colors duration-300" data-active="false">Testimoni</a>
+                <a href="artikel.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-colors duration-300" data-active="false">Artikel</a>
+                <a href="kontak.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-colors duration-300" data-active="false">Kontak</a>
             </div>
 
             <!-- CTA Button -->
+<<<<<<< HEAD
             <div class="hidden lg:block ml-2">
                 <a href="https://wa.me/6289508029834?text=Halo%20Admin%20Isee%20Digital,%20saya%20ingin%20berkonsultasi" target="_blank" class="group flex items-center bg-brand-navy text-white px-6 py-2.5 rounded-full font-bold hover:bg-[#25D366] shadow-[0_4px_15px_rgba(7,12,53,0.2)] hover:shadow-[0_4px_20px_rgba(37,211,102,0.4)] transition-all duration-300 transform hover:-translate-y-0.5">
                 <span>Hubungi Kami</span>
@@ -81,6 +105,14 @@
 
             <!-- Mobile Menu Toggle -->
             <button class="lg:hidden text-brand-navy p-2 hover:bg-white/50 rounded-full transition-colors mobile-menu-btn">
+=======
+            <div class="hidden lg:flex items-center ml-2">
+                <a href="kontak.html" class="bg-brand-navy text-white px-5 py-2 rounded-full text-xs font-bold tracking-wide hover:bg-brand-blue shadow-[0_4px_15px_rgba(7,12,53,0.18)] hover:shadow-[0_4px_20px_rgba(4,107,210,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center">Hubungi Kami</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="lg:hidden text-brand-navy p-2 hover:bg-slate-100 rounded-full transition-colors">
+>>>>>>> 7e98879616bdd88ff05724faefe35e5ca0fbef8a
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
@@ -143,48 +175,125 @@
 
     <main>
         <!-- 3. HERO SECTION -->
-        <section class="bg-brand-navy pt-40 text-center pb-20">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">Solusi Lengkap Untuk<br>Bisnismu!</h1>
-            <p class="text-slate-300 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+        <section class="bg-brand-navy pt-40 text-center pb-20 relative overflow-hidden">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight relative z-10">Solusi Lengkap Untuk<br>Bisnismu!</h1>
+            <p class="text-slate-300 max-w-2xl mx-auto text-base md:text-lg leading-relaxed relative z-10">
                 Kami menyediakan berbagai layanan digital marketing terintegrasi untuk membantu bisnis Anda tumbuh dan mendominasi pasar di era digital.
             </p>
+            <!-- Anti-Gravity Glow Backdrop -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-brand-blue/20 blur-[100px] rounded-full pointer-events-none"></div>
         </section>
+
         <!-- HERO / INTRO LAYANAN -->
-<section class="py-16 md:py-24 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      
-      <!-- Kolom Kiri: Gambar Promo/Layanan -->
-      <div class="flex justify-center">
-        <img 
-          src="assets/layanan-hero.png" 
-          alt="Layanan Digital Marketing" 
-          class="w-full max-w-md rounded-2xl shadow-lg object-cover"
-        />
-      </div>
-
-      <!-- Kolom Kanan: Teks Penjelasan -->
-      <div class="space-y-6 text-slate-700">
-        <p class="text-lg md:text-xl font-medium leading-relaxed">
-          Kami nggak cuma ngelola iklan, tapi bantu bisnismu tumbuh lebih cepat lewat strategi digital marketing yang komprehensif. Mau tahu apa aja yang bisa kami bantu?
-        </p>
-        <p class="text-base md:text-lg leading-relaxed text-slate-600">
-          Isee Digital Marketing hadir sebagai partner digital untuk membantu bisnis membangun branding yang kuat, meningkatkan penjualan, dan mencapai pertumbuhan berkelanjutan melalui strategi digital yang terarah dan terukur.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-        <!-- 4. LAYANAN UNGGULAN KAMI GRID -->
-        <section class="py-20 bg-brand-light">
+        <section class="py-16 md:py-24 bg-white relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-4">Layanan Unggulan Kami</h2>
-                    <p class="text-slate-500">Pilih layanan yang paling sesuai dengan kebutuhan dan target bisnis Anda.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Kolom Kiri: Visual Figur / Gambar Tim Kolaborasi (Pria & Wanita Gen Z, Kemeja Putih & Outer Navy) + Floating 3D Elements -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-full max-w-md mx-auto py-4">
+                            <!-- Anti-Gravity Glow -->
+                            <div class="absolute -inset-3 bg-gradient-to-tr from-brand-blue/20 via-sky-300/20 to-brand-navy/10 rounded-[2.5rem] blur-2xl opacity-70 pointer-events-none"></div>
+
+                            <!-- Main Card Frame: Clean Seamless Gradient Background & Realistic Team Photo Cutout Effect -->
+                            <div class="relative rounded-3xl overflow-hidden bg-gradient-to-b from-slate-50 via-white to-blue-50/30 border border-slate-200/60 shadow-[0_25px_60px_rgba(7,12,53,0.08)] group">
+                                <!-- Soft Inner Glow -->
+                                <div class="absolute inset-0 bg-gradient-to-tr from-blue-50/40 via-transparent to-transparent pointer-events-none"></div>
+
+                                <img 
+                                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80" 
+                                    alt="Tim Kolaborasi Mitra Strategis Digital Marketing Isee Digital" 
+                                    class="w-full h-[430px] md:h-[490px] object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                                />
+                                
+                                <!-- Soft Seamless Bottom Gradient Overlay -->
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/15 via-transparent to-transparent pointer-events-none"></div>
+                            </div>
+
+                            <!-- 3D Anti-Gravity Floating Social Media & Performance Badges -->
+                            <!-- Element 1: 3D Instagram Badge (Top Right) -->
+                            <div class="absolute -top-4 -right-3 md:-right-6 bg-white/95 backdrop-blur-md border border-white/80 p-3 rounded-2xl shadow-[0_12px_30px_rgba(4,107,210,0.16)] flex items-center gap-3 animate-float-slow pointer-events-none z-20">
+                                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 flex items-center justify-center text-white shadow-md">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                </div>
+                                <div>
+                                    <p class="font-sans text-[10px] font-bold text-slate-400 uppercase tracking-wider">Interaksi Brand</p>
+                                    <p class="font-sans text-xs font-black text-brand-navy flex items-center gap-1">+28.4k <span class="text-emerald-500 font-bold">▲</span></p>
+                                </div>
+                            </div>
+
+                            <!-- Element 2: 3D Growth ROI Badge (Bottom Left) -->
+                            <div class="absolute -bottom-5 -left-3 md:-left-6 bg-brand-navy/95 backdrop-blur-md border border-slate-700/60 p-3 rounded-2xl shadow-[0_15px_35px_rgba(7,12,53,0.3)] flex items-center gap-3 animate-float-reverse pointer-events-none z-20">
+                                <div class="w-9 h-9 rounded-xl bg-brand-blue flex items-center justify-center text-white text-base shadow-md shadow-blue-500/40">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M16 6l4 14H4L8 6h8zm-4 3a2.5 2.5 0 100 5 2.5 2.5 0 000-5z"/></svg>
+                                </div>
+                                <div>
+                                    <p class="font-sans text-[10px] font-semibold text-slate-300 uppercase tracking-wider">Akselerasi ROI</p>
+                                    <p class="font-sans text-xs font-black text-white flex items-center gap-1">+340% <span class="text-brand-yellow font-bold">🚀</span></p>
+                                </div>
+                            </div>
+
+                            <!-- Element 3: Anti-Gravity Floating Pill (Middle Right) -->
+                            <div class="absolute top-1/2 -right-4 md:-right-6 transform -translate-y-1/2 bg-white/95 backdrop-blur-md border border-slate-100 px-3 py-1.5 rounded-full shadow-lg flex items-center gap-2 animate-float-pulse pointer-events-none z-20">
+                                <div class="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center text-[10px] font-bold shadow-sm">
+                                    ✓
+                                </div>
+                                <span class="font-sans text-xs font-extrabold text-brand-navy tracking-tight">Mitra Strategis</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kolom Kanan: Teks Penjelasan & Konten Teks -->
+                    <div class="lg:col-span-7 space-y-6 font-sans">
+                        <!-- Judul Utama -->
+                        <h2 class="font-sans text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-navy leading-tight tracking-tight mb-6">
+                            Mitra Strategis Untuk Solusi Digital Terintegrasi
+                        </h2>
+
+                        <!-- Paragraf 1 (Bukan Bold, Presisi & Identik dengan Paragraf 2) -->
+                        <p class="font-sans text-base md:text-lg font-normal text-slate-600 leading-relaxed">
+                            Kami tak sekadar mengelola iklan, tapi merancang akselerasi pertumbuhan bisnis Anda melalui strategi digital komprehensif. Ingin tahu sejauh mana kami bisa membantu melampaui batas?
+                        </p>
+
+                        <!-- Paragraf 2 (Identik secara presisi dalam font-weight, color, font-size, & line-height) -->
+                        <p class="font-sans text-base md:text-lg font-normal text-slate-600 leading-relaxed">
+                            Isee Digital Marketing hadir sebagai mitra strategis untuk membantu membangun branding yang tangguh, melipatgandakan penjualan, dan mencapai pertumbuhan berkelanjutan melalui strategi digital yang berfokus pada hasil dan terukur.
+                        </p>
+
+                        <!-- Key Feature Highlights -->
+                        <div class="pt-2 grid grid-cols-2 gap-3 sm:gap-4 font-sans">
+                            <div class="flex items-center gap-2.5 bg-slate-50 p-3 rounded-2xl border border-slate-100">
+                                <div class="w-6 h-6 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center font-bold text-xs">✓</div>
+                                <span class="font-sans text-xs sm:text-sm font-bold text-brand-navy">Branding Tangguh</span>
+                            </div>
+                            <div class="flex items-center gap-2.5 bg-slate-50 p-3 rounded-2xl border border-slate-100">
+                                <div class="w-6 h-6 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center font-bold text-xs">✓</div>
+                                <span class="font-sans text-xs sm:text-sm font-bold text-brand-navy">Multiplikasi Penjualan</span>
+                            </div>
+                            <div class="flex items-center gap-2.5 bg-slate-50 p-3 rounded-2xl border border-slate-100">
+                                <div class="w-6 h-6 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center font-bold text-xs">✓</div>
+                                <span class="font-sans text-xs sm:text-sm font-bold text-brand-navy">Strategi Komprehensif</span>
+                            </div>
+                            <div class="flex items-center gap-2.5 bg-slate-50 p-3 rounded-2xl border border-slate-100">
+                                <div class="w-6 h-6 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center font-bold text-xs">✓</div>
+                                <span class="font-sans text-xs sm:text-sm font-bold text-brand-navy">Hasil Terukur</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. LAYANAN UTAMA KAMI (CENTERED & PREMIUM CARD) -->
+        <section class="py-20 bg-brand-light relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-3 tracking-tight">Layanan Unggulan Kami</h2>
+                    <p class="text-slate-500 max-w-xl mx-auto text-sm md:text-base">Solusi utama untuk mendominasi kehadiran brand Anda di era digital.</p>
                 </div>
                 
+<<<<<<< HEAD
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Layanan 1 -->
                     <div class="bg-white p-8 rounded-3xl border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
@@ -221,8 +330,55 @@
                         <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center mb-6 text-xl"><svg class="w-7 h-7 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg></div>
                         <h3 class="text-xl font-bold text-brand-navy mb-3">Desain Grafis & Branding</h3>
                         <p class="text-slate-500 text-sm leading-relaxed">Ciptakan identitas visual yang kuat dan materi promosi yang menarik untuk membedakan brand Anda.</p>
+=======
+                <!-- Centered Single Premium Service Card -->
+                <div class="max-w-2xl mx-auto">
+                    <div class="relative group bg-gradient-to-br from-white via-slate-50/90 to-blue-50/50 p-8 sm:p-10 md:p-12 rounded-[2rem] border border-slate-200/80 shadow-[0_20px_50px_rgba(7,12,53,0.08)] hover:shadow-[0_25px_60px_rgba(4,107,210,0.15)] transition-all duration-500">
+                        
+                        <!-- Card Focus Header (Clean & Minimalist) -->
+                        <div class="mb-6">
+                            <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-navy tracking-tight">Manajemen Media Sosial</h3>
+                        </div>
+
+                        <!-- Service Description -->
+                        <p class="text-slate-600 text-base leading-relaxed mb-8 border-b border-slate-200/70 pb-6">
+                            Tingkatkan engagement dan brand awareness dengan konten kreatif, analisis tren terkini, dan strategi sosial media yang tepat sasaran untuk mengembangkan bisnis Anda.
+                        </p>
+
+                        <!-- Poin-Poin Keunggulan Layanan -->
+                        <div class="mb-10">
+                            <h4 class="text-xs font-extrabold text-slate-400 uppercase tracking-wider mb-4">Keunggulan Layanan:</h4>
+                            <ul class="space-y-3.5">
+                                <li class="flex items-start gap-3 text-slate-700 font-semibold text-sm sm:text-base">
+                                    <div class="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 shadow-sm">✔</div>
+                                    <span>Strategi Konten Sesuai Target Bisnis &amp; Tren</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-700 font-semibold text-sm sm:text-base">
+                                    <div class="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 shadow-sm">✔</div>
+                                    <span>Perencanaan &amp; Eksekusi Konten Terjadwal</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-700 font-semibold text-sm sm:text-base">
+                                    <div class="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 shadow-sm">✔</div>
+                                    <span>Analisis Performa &amp; Laporan Berkala</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-700 font-semibold text-sm sm:text-base">
+                                    <div class="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 shadow-sm">✔</div>
+                                    <span>Peningkatan Engagement &amp; Kepercayaan Audiens</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- WhatsApp Call-To-Action Button -->
+                        <div>
+                            <a href="https://wa.me/6289508029834" target="_blank" class="inline-flex items-center justify-center gap-2.5 w-full bg-brand-blue hover:bg-blue-700 text-white font-extrabold text-sm sm:text-base py-4 rounded-full shadow-[0_10px_25px_rgba(4,107,210,0.3)] hover:shadow-[0_15px_35px_rgba(4,107,210,0.45)] transform hover:-translate-y-0.5 transition-all duration-300">
+                                Konsultasi Gratis via WhatsApp <span class="text-lg">→</span>
+                            </a>
+                        </div>
+
+>>>>>>> 7e98879616bdd88ff05724faefe35e5ca0fbef8a
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -234,8 +390,9 @@
                     <p class="text-slate-500">Pilih paket kelola sosmed yang sesuai dengan skala bisnis Anda. Mulai bangun kehadiran digital yang solid hari ini.</p>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
                     <!-- Paket A -->
+<<<<<<< HEAD
                     <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 text-center hover:-translate-y-2 transition-transform duration-300">
                         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Tim spesialis digital marketing profesional untuk paket basic" class="mx-auto mb-4 rounded-full w-20 h-20 object-cover">
                         <h3 class="text-2xl font-bold text-brand-navy mb-2">Paket A</h3>
@@ -360,6 +517,131 @@
                         <div class="px-6 pb-4 text-slate-600 text-sm hidden faq-content">
                             Kami menyediakan laporan kinerja secara komprehensif setiap akhir bulan. Laporan mencakup data pertumbuhan, analisis konten terbaik, dan rencana strategis untuk bulan berikutnya.
                         </div>
+=======
+                    <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 text-center hover:-translate-y-2 transition-transform duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="w-20 h-20 mx-auto mb-4 bg-blue-50/80 border border-blue-100 rounded-3xl p-3 flex items-center justify-center shadow-sm">
+                                <img src="assets/logo.png" alt="Mascot Isee Digital Marketing" class="w-full h-full object-contain">
+                            </div>
+                            <h3 class="text-2xl font-extrabold text-brand-navy mb-1">Paket A</h3>
+                            <p class="text-slate-400 mb-8 text-sm font-medium">Starter Pack</p>
+                            
+                            <ul class="text-left space-y-3.5 mb-8 text-slate-600 font-medium text-sm">
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✔</div>
+                                    <span>7 reels konten</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✔</div>
+                                    <span>7 story dari reels</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✔</div>
+                                    <span>Full editing + upload</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✔</div>
+                                    <span>Free copywriting</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✔</div>
+                                    <span>Free riset hastag</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✔</div>
+                                    <span>Free konsultasi WA</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/6289508029834?text=Halo%20Isee%20Digital%20Marketing.%20Saya%20ingin%20tahu%20lebih%20detail%20Paket%20A%2C%20Konsultasi%20paket%20jasa%20handle%20sosial%20media" target="_blank" class="block w-full bg-brand-blue text-white py-3.5 rounded-full font-extrabold hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg">Lihat Detail</a>
+                    </div>
+
+                    <!-- Paket B (Highlight) -->
+                    <div class="bg-white p-8 rounded-3xl shadow-2xl border-2 border-brand-blue text-center transform md:scale-105 relative z-10 flex flex-col justify-between">
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand-yellow text-brand-navy font-black px-4 py-1 rounded-full text-xs uppercase tracking-wider shadow-md">Paling Laris</div>
+                        <div>
+                            <div class="w-20 h-20 mx-auto mb-4 bg-blue-50/80 border border-blue-100 rounded-3xl p-3 flex items-center justify-center shadow-sm mt-2">
+                                <img src="assets/logo.png" alt="Mascot Isee Digital Marketing" class="w-full h-full object-contain">
+                            </div>
+                            <h3 class="text-2xl font-extrabold text-brand-navy mb-1">Paket B</h3>
+                            <p class="text-slate-400 mb-8 text-sm font-medium">Growth Pack</p>
+                            
+                            <ul class="text-left space-y-3.5 mb-8 text-slate-600 font-medium text-sm">
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✔</div>
+                                    <span>15 reels konten</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✔</div>
+                                    <span>15 story dari reels</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✔</div>
+                                    <span>Full editing + upload</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✔</div>
+                                    <span>5x revisi konten</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✔</div>
+                                    <span>Free copywriting</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✔</div>
+                                    <span>Free riset hastag</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✔</div>
+                                    <span>Free konsultasi WA</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/6289508029834?text=Halo%20Isee%20Digital%20Marketing.%20Saya%20ingin%20tahu%20lebih%20detail%20Paket%20B%2C%20Konsultasi%20paket%20jasa%20handle%20sosial%20media" target="_blank" class="block w-full bg-brand-blue text-white py-3.5 rounded-full font-extrabold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/30">Lihat Detail</a>
+                    </div>
+
+                    <!-- Paket C -->
+                    <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 text-center hover:-translate-y-2 transition-transform duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="w-20 h-20 mx-auto mb-4 bg-blue-50/80 border border-blue-100 rounded-3xl p-3 flex items-center justify-center shadow-sm">
+                                <img src="assets/logo.png" alt="Mascot Isee Digital Marketing" class="w-full h-full object-contain">
+                            </div>
+                            <h3 class="text-2xl font-extrabold text-brand-navy mb-1">Paket C</h3>
+                            <p class="text-slate-400 mb-8 text-sm font-medium">Pro Pack</p>
+                            
+                            <ul class="text-left space-y-3.5 mb-8 text-slate-600 font-medium text-sm">
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✔</div>
+                                    <span>31 reels konten</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✔</div>
+                                    <span>31 story dari reels</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✔</div>
+                                    <span>Full editing + upload</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✔</div>
+                                    <span>Free revisi unlimited</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✔</div>
+                                    <span>Free copywriting</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✔</div>
+                                    <span>Free riset hastag + SEO</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <div class="w-5 h-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✔</div>
+                                    <span>Free konsultasi WA</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/6289508029834?text=Halo%20Isee%20Digital%20Marketing.%20Saya%20ingin%20tahu%20lebih%20detail%20Paket%20C%2C%20Konsultasi%20paket%20jasa%20handle%20sosial%20media" target="_blank" class="block w-full bg-brand-blue text-white py-3.5 rounded-full font-extrabold hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg">Lihat Detail</a>
+>>>>>>> 7e98879616bdd88ff05724faefe35e5ca0fbef8a
                     </div>
                 </div>
             </div>

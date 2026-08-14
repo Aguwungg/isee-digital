@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Artikel - Isee Digital Marketing</title>
+    
+    <!-- Import Font Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Import Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Konfigurasi Tema Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#046BD2',
+                            navy: '#070C35',
+                            yellow: '#FFB600',
+                            light: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Typography styling for WordPress HTML content */
+        .wp-article-content h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #070C35;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        .wp-article-content h2 {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: #070C35;
+            margin-top: 2.25rem;
+            margin-bottom: 1rem;
+            line-height: 1.35;
+            letter-spacing: -0.02em;
+        }
+        .wp-article-content h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #070C35;
+            margin-top: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .wp-article-content p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 1.5rem;
+        }
+        .wp-article-content ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #334155;
+        }
+        .wp-article-content ol {
+            list-style-type: decimal;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #334155;
+        }
+        .wp-article-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+        .wp-article-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+            object-fit: cover;
+        }
+        .wp-article-content blockquote {
+            border-left: 4px solid #046BD2;
+            background-color: #F8FAFC;
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 1rem 1rem 0;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            color: #070C35;
+        }
+        .wp-article-content a {
+            color: #046BD2;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        .wp-article-content a:hover {
+            color: #034b94;
+        }
+        .wp-article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 1px solid #E2E8F0;
+        }
+        .wp-article-content th, .wp-article-content td {
+            padding: 0.75rem 1rem;
+            border: 1px solid #E2E8F0;
+            text-align: left;
+        }
+        .wp-article-content th {
+            background-color: #046BD2;
+            color: white;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-slate-800 bg-brand-light">
+    <!-- Page Transition Overlay -->
+    <div id="page-transition-overlay" class="fixed inset-0 bg-white z-[9999] transition-opacity duration-500 pointer-events-none opacity-100"></div>
+
+    <!-- 2. NAVIGATION BAR (FLOATING GLASSMORPHISM) -->
+    <div class="w-full flex justify-center fixed top-6 z-50 px-4 pointer-events-none">
+        <nav id="navbar" class="pointer-events-auto w-full max-w-6xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-slate-100 rounded-full px-4 sm:px-8 py-3 flex justify-between items-center transition-all duration-300">
+            <!-- Logo -->
+            <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+                <div class="bg-white p-1.5 rounded-full shadow-sm group-hover:shadow-md transition-all">
+                    <img src="assets/logo.png" alt="Logo Isee Digital Marketing" class="h-8 w-auto">
+                </div>
+                <span class="font-extrabold text-lg md:text-xl text-brand-navy tracking-tight group-hover:text-brand-blue transition-colors">Isee Digital</span>
+            </a>
+            
+            <!-- Menu Links (Desktop) -->
+            <div class="hidden lg:flex space-x-1 items-center text-sm font-medium relative" id="nav-links-container">
+                <div id="nav-indicator" class="absolute bg-brand-blue rounded-full transition-all duration-300 ease-out shadow-md pointer-events-none opacity-0" style="z-index: 0;"></div>
+                <a href="index.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Beranda</a>
+                <a href="tentang-kami.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Tentang Kami</a>
+                <a href="layanan.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Layanan</a>
+                <a href="lowongan.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Lowongan</a>
+                <a href="testimoni.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Testimoni</a>
+                <a href="artikel.html" class="nav-item relative z-10 text-white px-5 py-2 rounded-full font-bold transition-colors duration-300" data-active="true">Artikel</a>
+                <a href="kontak.html" class="nav-item relative z-10 text-slate-600 hover:text-brand-navy px-4 py-2 rounded-full transition-colors duration-300" data-active="false">Kontak</a>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="hidden lg:block ml-2">
+                <a href="kontak.html" class="bg-brand-navy text-white px-6 py-2.5 rounded-full font-bold hover:bg-brand-blue shadow-[0_4px_15px_rgba(7,12,53,0.2)] hover:shadow-[0_4px_20px_rgba(4,107,210,0.4)] transition-all duration-300 transform hover:-translate-y-0.5">Hubungi Kami</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="lg:hidden text-brand-navy p-2 hover:bg-white/50 rounded-full transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+    </div>
+
+    <!-- MAIN ARTICLE CONTENT SECTION -->
+    <main class="pt-36 pb-24">
+        <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Tombol Kembali Ke Artikel (Atas) -->
+            <div class="mb-8">
+                <a href="artikel.html" class="inline-flex items-center gap-2 bg-white border border-slate-200 text-slate-700 hover:text-brand-blue hover:border-brand-blue px-5 py-2.5 rounded-full text-sm font-extrabold shadow-sm hover:shadow-md transition-all">
+                    <span>←</span> Kembali ke Artikel
+                </a>
+            </div>
+
+            <!-- Container Tempat Render Detail Artikel -->
+            <div id="post-detail-container">
+                <!-- Skeleton Loader -->
+                <div class="animate-pulse space-y-6">
+                    <div class="h-10 bg-slate-200 rounded-2xl w-3/4 mx-auto mb-4"></div>
+                    <div class="h-4 bg-slate-200 rounded w-1/3 mx-auto mb-8"></div>
+                    <div class="h-[400px] bg-slate-200 rounded-3xl w-full mb-8"></div>
+                    <div class="space-y-3">
+                        <div class="h-4 bg-slate-200 rounded w-full"></div>
+                        <div class="h-4 bg-slate-200 rounded w-full"></div>
+                        <div class="h-4 bg-slate-200 rounded w-5/6"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tombol Kembali Ke Artikel (Bawah) -->
+            <div class="mt-16 pt-8 border-t border-slate-200 flex justify-between items-center">
+                <a href="artikel.html" class="inline-flex items-center gap-2 bg-brand-navy text-white hover:bg-brand-blue px-6 py-3 rounded-full text-sm font-extrabold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                    <span>←</span> Kembali ke Artikel
+                </a>
+                <a href="kontak.html" class="inline-flex items-center gap-2 bg-brand-yellow text-brand-navy hover:bg-yellow-400 px-6 py-3 rounded-full text-sm font-extrabold shadow-md transition-all">
+                    Konsultasi Digital Marketing →
+                </a>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-navy text-slate-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
+            <!-- Footer Col 1 -->
+            <div class="col-span-1">
+                <h4 class="text-white text-xl font-extrabold mb-4 flex items-center gap-2">
+                    <span class="text-2xl">🚀</span> Isee Digital
+                </h4>
+                <p class="mb-4 text-sm text-slate-400 leading-relaxed">Partner strategis digital marketing Anda untuk pertumbuhan bisnis yang eksponensial.</p>
+                <p class="mt-8 text-xs text-slate-500">&copy; 2026 Isee Digital Marketing.<br>Sleman, Yogyakarta.</p>
+            </div>
+            
+            <!-- Footer Col 2 -->
+            <div>
+                <h5 class="text-white font-bold mb-4 tracking-wide text-sm uppercase">Perusahaan</h5>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Beranda</a></li>
+                    <li><a href="tentang-kami.html" class="hover:text-white transition-colors">Tentang Kami</a></li>
+                    <li><a href="testimoni.html" class="hover:text-white transition-colors">Testimoni</a></li>
+                </ul>
+            </div>
+            
+            <!-- Footer Col 3 -->
+            <div>
+                <h5 class="text-white font-bold mb-4 tracking-wide text-sm uppercase">Layanan</h5>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li><a href="layanan.html" class="hover:text-white transition-colors">Layanan</a></li>
+                    <li><a href="artikel.html" class="hover:text-white transition-colors">Artikel</a></li>
+                    <li><a href="lowongan.html" class="hover:text-white transition-colors">Lowongan</a></li>
+                </ul>
+            </div>
+
+            <!-- Footer Col 4 -->
+            <div>
+                <h5 class="text-white font-bold mb-4 tracking-wide text-sm uppercase">Bantuan</h5>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li><a href="kontak.html" class="hover:text-white transition-colors">Kontak</a></li>
+                    <li class="flex items-center gap-2 mt-4"><span class="text-brand-blue">✉️</span> info@iseedigital.com</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FETCH SINGLE ARTICLE DETAIL FROM WORDPRESS REST API -->
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const container = document.getElementById("post-detail-container");
+            const urlParams = new URLSearchParams(window.location.search);
+            const postId = urlParams.get('id');
+
+            if (!postId) {
+                container.innerHTML = `
+                    <div class="text-center py-16 bg-white rounded-3xl border border-slate-200 shadow-sm">
+                        <p class="text-slate-700 font-extrabold text-xl mb-2">ID Artikel Tidak Ditemukan</p>
+                        <p class="text-slate-500 text-sm mb-6">Silakan pilih artikel yang valid dari katalog artikel kami.</p>
+                        <a href="artikel.html" class="inline-block bg-brand-blue text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-md hover:bg-blue-700 transition-all">
+                            ← Kembali ke Katalog Artikel
+                        </a>
+                    </div>
+                `;
+                return;
+            }
+
+            function formatDate(dateStr) {
+                const dateObj = new Date(dateStr);
+                if (isNaN(dateObj)) return 'Agustus 2026';
+                const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+                return `${dateObj.getDate()} ${months[dateObj.getMonth()]} ${dateObj.getFullYear()}`;
+            }
+
+            function getFeaturedImage(post) {
+                if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0]) {
+                    return post._embedded['wp:featuredmedia'][0].source_url || 
+                           post._embedded['wp:featuredmedia'][0].media_details?.sizes?.full?.source_url ||
+                           post._embedded['wp:featuredmedia'][0].media_details?.sizes?.large?.source_url;
+                }
+                return 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=1200&q=80';
+            }
+
+            function getAuthorName(post) {
+                if (post._embedded && post._embedded['author'] && post._embedded['author'][0]) {
+                    return post._embedded['author'][0].name;
+                }
+                return 'Tim Isee Digital Marketing';
+            }
+
+            function getCategoryName(post) {
+                if (post._embedded && post._embedded['wp:term'] && post._embedded['wp:term'][0] && post._embedded['wp:term'][0][0]) {
+                    return post._embedded['wp:term'][0][0].name;
+                }
+                return 'Digital Marketing';
+            }
+
+            try {
+                const response = await fetch(`https://iseedigitalmarketing.com/wp-json/wp/v2/posts/${postId}?_embed`);
+                if (!response.ok) throw new Error(`HTTP ${response.status} - Artikel tidak ditemukan`);
+                
+                const post = await response.json();
+                
+                const title = post.title?.rendered || 'Detail Artikel';
+                const content = post.content?.rendered || '';
+                const dateFormatted = formatDate(post.date);
+                const author = getAuthorName(post);
+                const category = getCategoryName(post);
+                const featuredImg = getFeaturedImage(post);
+
+                // Update page title
+                document.title = `${title} - Isee Digital Marketing`;
+
+                container.innerHTML = `
+                    <!-- Header Artikel -->
+                    <div class="text-center mb-10">
+                        <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-brand-blue font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider mb-4 shadow-sm">
+                            📁 ${category}
+                        </div>
+                        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-navy leading-tight mb-6 tracking-tight">
+                            ${title}
+                        </h1>
+                        <div class="flex items-center justify-center gap-3 text-sm text-slate-500 font-semibold">
+                            <span>👤 ${author}</span>
+                            <span>•</span>
+                            <span>📅 ${dateFormatted}</span>
+                        </div>
+                    </div>
+
+                    <!-- Featured Image -->
+                    <div class="mb-12 rounded-3xl overflow-hidden shadow-xl border border-slate-100">
+                        <img src="${featuredImg}" alt="${title}" class="w-full max-h-[480px] object-cover">
+                    </div>
+
+                    <!-- Article Body Content -->
+                    <div class="wp-article-content bg-white p-8 sm:p-12 rounded-3xl shadow-sm border border-slate-100">
+                        ${content}
+                    </div>
+                `;
+
+            } catch (error) {
+                console.error("Gagal memuat detail artikel:", error);
+                container.innerHTML = `
+                    <div class="text-center py-16 bg-white rounded-3xl border border-red-100 shadow-sm">
+                        <p class="text-slate-700 font-extrabold text-xl mb-2">Gagal Memuat Artikel</p>
+                        <p class="text-slate-400 text-sm mb-6">${error.message}</p>
+                        <a href="artikel.html" class="inline-block bg-brand-blue text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-md hover:bg-blue-700 transition-all">
+                            ← Kembali ke Katalog Artikel
+                        </a>
+                    </div>
+                `;
+            }
+        });
+    </script>
+    <!-- Global Animations -->
+    <script src="assets/animations.js"></script>
+    <script>
+        // Navbar Dynamic Glassmorphism on Scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                navbar.classList.remove('bg-white', 'border-slate-100');
+                navbar.classList.add('bg-white/10', 'backdrop-blur-md', 'border-white/20');
+            } else {
+                navbar.classList.add('bg-white', 'border-slate-100');
+                navbar.classList.remove('bg-white/10', 'backdrop-blur-md', 'border-white/20');
+            }
+        });
+    </script>
+</body>
+</html>

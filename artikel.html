@@ -45,7 +45,6 @@
     <!-- Page Transition Overlay -->
     <div id="page-transition-overlay" class="fixed inset-0 bg-white z-[9999] transition-opacity duration-500 pointer-events-none opacity-100"></div>
 
-
     <!-- 2. NAVIGATION BAR (FLOATING GLASSMORPHISM) -->
     <div class="w-full flex justify-center fixed top-6 z-50 px-4 pointer-events-none">
         <nav id="navbar" class="pointer-events-auto w-full max-w-6xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-slate-100 rounded-full px-4 sm:px-8 py-3 flex justify-between items-center transition-all duration-300">
@@ -104,16 +103,17 @@
     <main class="pb-24">
         <!-- 3. HERO SECTION ARTIKEL -->
         <section class="bg-brand-navy pt-40 pb-24 text-center px-4">
-            <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">Artikel & Wawasan Digital</h1>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-tight">Artikel &amp; Wawasan Digital</h1>
             <p class="text-slate-300 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
-                Pelajari strategi terbaru dan tips seputar dunia digital marketing untuk bisnis Anda.
+                Pelajari strategi terbaru dan tips seputar dunia digital marketing langsung dari blog resmi Isee Digital Marketing.
             </p>
         </section>
 
-        <!-- 4. PENCARIAN & FILTER -->
+        <!-- 4. PENCARIAN -->
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-10 mb-12">
-            <div class="bg-white rounded-full shadow-md border border-slate-100 p-2 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="bg-white rounded-full shadow-md border border-slate-100 p-2 flex items-center justify-between">
                 <!-- Search Bar -->
+<<<<<<< HEAD
                 <div class="flex items-center w-full md:w-1/3 bg-slate-50 rounded-full px-4 py-2">
                     <span class="text-slate-400">🔍</span>
                     <input type="text" id="search-input" placeholder="Cari artikel..." class="bg-transparent border-none outline-none w-full text-sm ml-2 text-slate-600 placeholder-slate-400">
@@ -126,31 +126,51 @@
                     <button class="filter-btn bg-blue-50 text-brand-blue px-5 py-1.5 rounded-full text-sm font-semibold hover:bg-brand-blue hover:text-white transition-all" data-category="Iklan Online">Iklan Online</button>
                     <button class="filter-btn bg-blue-50 text-brand-blue px-5 py-1.5 rounded-full text-sm font-semibold hover:bg-brand-blue hover:text-white transition-all" data-category="Konten">Konten</button>
                     <button class="filter-btn bg-blue-50 text-brand-blue px-5 py-1.5 rounded-full text-sm font-semibold hover:bg-brand-blue hover:text-white transition-all" data-category="Media Sosial">Media Sosial</button>
+=======
+                <div class="flex items-center w-full bg-slate-50 rounded-full px-5 py-3">
+                    <span class="text-slate-400 text-lg mr-3">🔍</span>
+                    <input type="text" id="search-input" placeholder="Cari judul atau topik artikel..." class="bg-transparent border-none outline-none w-full text-sm text-slate-700 placeholder-slate-400 font-medium">
+>>>>>>> 7e98879616bdd88ff05724faefe35e5ca0fbef8a
                 </div>
             </div>
         </section>
 
+<<<<<<< HEAD
         <!-- 5. GRID ARTIKEL -->
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div id="article-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-12">
                 <!-- Artikel akan dirender secara dinamis oleh Vanilla JS -->
+=======
+        <!-- 5. GRID ARTIKEL DINAMIS FROM WORDPRESS REST API (DENGAN PAGINASI LENGKAP) -->
+        <section id="articles-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Information Bar Top Pagination -->
+            <div id="top-pagination-info" class="mb-8 flex flex-col sm:flex-row justify-between items-center text-sm font-semibold text-slate-500 bg-white px-6 py-3 rounded-full border border-slate-100 shadow-sm gap-2">
+                <div>Memuat data artikel...</div>
+>>>>>>> 7e98879616bdd88ff05724faefe35e5ca0fbef8a
             </div>
 
-            <!-- 6. PAGINATION -->
-            <div class="mt-16 flex justify-center items-center gap-2" id="pagination-container">
-                <button class="w-8 h-8 flex items-center justify-center rounded-full text-slate-400 hover:text-brand-navy transition-colors">&lsaquo;</button>
-                <button class="page-btn w-8 h-8 flex items-center justify-center rounded-full bg-brand-blue text-white font-bold shadow-md">1</button>
-                <button class="page-btn w-8 h-8 flex items-center justify-center rounded-full text-slate-500 hover:bg-slate-200 transition-colors font-medium">2</button>
-                <button class="page-btn w-8 h-8 flex items-center justify-center rounded-full text-slate-500 hover:bg-slate-200 transition-colors font-medium">3</button>
-                <button class="w-8 h-8 flex items-center justify-center rounded-full text-slate-400 hover:text-brand-navy transition-colors">&rsaquo;</button>
+            <!-- Articles Grid -->
+            <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-12">
+                <!-- Data artikel akan di-render secara otomatis oleh JavaScript dari WordPress REST API -->
+            </div>
+
+            <!-- Bottom Pagination Controls -->
+            <div id="pagination-container" class="mt-16 flex flex-wrap justify-center items-center gap-2">
+                <!-- Komponen Paginasi akan di-render di sini -->
             </div>
         </section>
     </main>
 
+<<<<<<< HEAD
     <!-- 7. FOOTER -->
     <!-- 7. FOOTER (MASTER TEMPLATE) -->
     <footer class="bg-brand-navy text-slate-400 py-16 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
+=======
+    <!-- 6. FOOTER -->
+    <footer class="bg-brand-navy text-slate-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
+>>>>>>> 7e98879616bdd88ff05724faefe35e5ca0fbef8a
             <!-- Footer Col 1 -->
             <div class="col-span-1 md:col-span-2 lg:col-span-1">
                 <a href="index.html" class="inline-block mb-6">
@@ -205,59 +225,289 @@
         </div>
     </footer>
 
-    <!-- SCRIPT JAVASCRIPT YANG SUDAH DIPERBAIKI -->
+    <!-- JAVASCRIPT FETCH WORDPRESS REST API DENGAN PAGINASI LENGKAP -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // 1. Logika Filter Kategori yang Lebih Akurat
-            const btnSemua = document.getElementById("filter-semua");
-            const btnDigital = document.getElementById("filter-digital");
-            const btnIklan = document.getElementById("filter-iklan");
-            const allBtns = [btnSemua, btnDigital, btnIklan];
+            const articleContainer = document.getElementById("articles-grid");
+            const topInfoContainer = document.getElementById("top-pagination-info");
+            const paginationContainer = document.getElementById("pagination-container");
+            const searchInput = document.getElementById("search-input");
             
-            const articleCards = document.querySelectorAll(".article-card");
+            let currentPage = 1;
+            let totalPages = 1;
+            let totalPostsCount = 0;
+            const perPage = 12;
+            let currentPosts = [];
 
-            function setActiveButton(activeBtn) {
-                // Reset semua tombol ke gaya default
-                allBtns.forEach(btn => {
-                    btn.className = "bg-blue-50 text-brand-blue px-5 py-1.5 rounded-full text-sm font-semibold hover:bg-brand-blue hover:text-white transition-all";
-                });
-                // Beri gaya aktif (biru solid) pada tombol yang diklik
-                activeBtn.className = "bg-brand-blue text-white px-5 py-1.5 rounded-full text-sm font-semibold hover:shadow-md transition-all";
+            function formatDate(dateStr) {
+                const dateObj = new Date(dateStr);
+                if (isNaN(dateObj)) return { day: '01', month: 'Jan' };
+                const day = String(dateObj.getDate()).padStart(2, '0');
+                const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+                const month = months[dateObj.getMonth()];
+                return { day, month };
             }
 
-            function filterArticles(keyword) {
-                articleCards.forEach(card => {
-                    const categoryElement = card.querySelector(".category-label");
-                    if (categoryElement) {
-                        const categoryText = categoryElement.innerText.toLowerCase();
-                        if (keyword === "semua" || categoryText.includes(keyword)) {
-                            card.style.display = "block";
-                        } else {
-                            card.style.display = "none";
-                        }
+            function getFeaturedImage(post) {
+                if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0]) {
+                    return post._embedded['wp:featuredmedia'][0].source_url || 
+                           post._embedded['wp:featuredmedia'][0].media_details?.sizes?.medium_large?.source_url ||
+                           post._embedded['wp:featuredmedia'][0].media_details?.sizes?.full?.source_url;
+                }
+                return 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=600&q=80';
+            }
+
+            function getCategoryName(post) {
+                if (post._embedded && post._embedded['wp:term'] && post._embedded['wp:term'][0] && post._embedded['wp:term'][0][0]) {
+                    return post._embedded['wp:term'][0][0].name;
+                }
+                return 'Digital Marketing';
+            }
+
+            function getAuthorName(post) {
+                if (post._embedded && post._embedded['author'] && post._embedded['author'][0]) {
+                    return post._embedded['author'][0].name;
+                }
+                return 'Tim Isee Digital';
+            }
+
+            function stripHtml(html) {
+                const tmp = document.createElement("DIV");
+                tmp.innerHTML = html;
+                return tmp.textContent || tmp.innerText || "";
+            }
+
+            function renderArticles(posts) {
+                if (!articleContainer) return;
+                
+                if (posts.length === 0) {
+                    articleContainer.innerHTML = `
+                        <div class="col-span-full text-center py-16 bg-white rounded-3xl border border-slate-100 shadow-sm">
+                            <p class="text-slate-400 text-base font-medium">Tidak ada artikel yang ditemukan.</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                articleContainer.innerHTML = posts.map(post => {
+                    const date = formatDate(post.date);
+                    const imageUrl = getFeaturedImage(post);
+                    const category = getCategoryName(post);
+                    const author = getAuthorName(post);
+                    const title = post.title?.rendered || 'Tanpa Judul';
+                    const rawExcerpt = post.excerpt?.rendered || '';
+                    const excerpt = stripHtml(rawExcerpt).slice(0, 110) + '...';
+
+                    return `
+                        <article class="bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                            <div>
+                                <a href="detail-artikel.html?id=${post.id}" class="block relative overflow-hidden">
+                                    <img src="${imageUrl}" alt="${title}" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105">
+                                    <div class="absolute -bottom-6 left-6 w-14 h-14 bg-white rounded-2xl shadow-md flex flex-col justify-center items-center border border-slate-100">
+                                        <span class="text-brand-blue font-extrabold text-lg leading-none">${date.day}</span>
+                                        <span class="text-slate-400 text-[10px] uppercase font-bold mt-0.5">${date.month}</span>
+                                    </div>
+                                </a>
+                                <div class="p-6 pt-10">
+                                    <div class="flex items-center gap-2 text-xs text-slate-400 mb-3 font-semibold">
+                                        <span>👤 ${author}</span>
+                                        <span>•</span>
+                                        <span class="text-brand-blue">📁 ${category}</span>
+                                    </div>
+                                    <a href="detail-artikel.html?id=${post.id}">
+                                        <h3 class="font-extrabold text-brand-navy text-lg leading-snug hover:text-brand-blue transition-colors line-clamp-2 mb-3">
+                                            ${title}
+                                        </h3>
+                                    </a>
+                                    <p class="text-slate-500 text-sm leading-relaxed line-clamp-3">
+                                        ${excerpt}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="px-6 pb-6 pt-2">
+                                <a href="detail-artikel.html?id=${post.id}" class="inline-flex items-center gap-1.5 text-xs font-extrabold text-brand-blue group-hover:translate-x-1 transition-transform">
+                                    Baca Selengkapnya →
+                                </a>
+                            </div>
+                        </article>
+                    `;
+                }).join('');
+            }
+
+            function getPageNumbers(current, total) {
+                const pages = [];
+                if (total <= 7) {
+                    for (let i = 1; i <= total; i++) pages.push(i);
+                } else {
+                    pages.push(1);
+                    if (current > 3) pages.push('...');
+                    
+                    let start = Math.max(2, current - 1);
+                    let end = Math.min(total - 1, current + 1);
+                    
+                    if (current <= 3) {
+                        start = 2;
+                        end = 4;
+                    } else if (current >= total - 2) {
+                        start = total - 3;
+                        end = total - 1;
+                    }
+                    
+                    for (let i = start; i <= end; i++) pages.push(i);
+                    
+                    if (current < total - 2) pages.push('...');
+                    pages.push(total);
+                }
+                return pages;
+            }
+
+            function renderPaginationControls() {
+                if (topInfoContainer) {
+                    topInfoContainer.innerHTML = `
+                        <div>Menampilkan Halaman <span class="text-brand-blue font-extrabold">${currentPage}</span> dari <span class="text-brand-navy font-extrabold">${totalPages}</span></div>
+                        <div class="text-xs text-slate-400 font-medium">${totalPostsCount ? `Total ${totalPostsCount} Artikel` : ''}</div>
+                    `;
+                }
+
+                if (!paginationContainer) return;
+
+                if (totalPages <= 1) {
+                    paginationContainer.innerHTML = '';
+                    return;
+                }
+
+                const pageNumbers = getPageNumbers(currentPage, totalPages);
+                
+                let html = `
+                    <button id="btn-prev-page" class="px-4 py-2 rounded-full text-xs font-extrabold transition-all flex items-center gap-1.5 ${
+                        currentPage === 1 
+                        ? 'bg-slate-100 text-slate-300 cursor-not-allowed' 
+                        : 'bg-white text-brand-navy border border-slate-200 hover:bg-brand-blue hover:text-white hover:border-brand-blue shadow-sm cursor-pointer'
+                    }">
+                        « Sebelumnya
+                    </button>
+                `;
+
+                pageNumbers.forEach(page => {
+                    if (page === '...') {
+                        html += `<span class="px-2 py-1 text-slate-400 font-bold text-xs">...</span>`;
+                    } else {
+                        const isActive = page === currentPage;
+                        html += `
+                            <button class="page-num-btn w-9 h-9 flex items-center justify-center rounded-full text-xs font-extrabold transition-all ${
+                                isActive
+                                ? 'bg-brand-blue text-white shadow-md scale-105'
+                                : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 hover:text-brand-navy shadow-sm'
+                            }" data-page="${page}">
+                                ${page}
+                            </button>
+                        `;
                     }
                 });
-            }
 
-            // Pasang event listener (tunggu sampai diklik)
-            if(btnSemua && btnDigital && btnIklan) {
-                btnSemua.addEventListener("click", () => { setActiveButton(btnSemua); filterArticles("semua"); });
-                btnDigital.addEventListener("click", () => { setActiveButton(btnDigital); filterArticles("digital marketing"); });
-                btnIklan.addEventListener("click", () => { setActiveButton(btnIklan); filterArticles("iklan online"); });
-            }
+                html += `
+                    <button id="btn-next-page" class="px-4 py-2 rounded-full text-xs font-extrabold transition-all flex items-center gap-1.5 ${
+                        currentPage === totalPages 
+                        ? 'bg-slate-100 text-slate-300 cursor-not-allowed' 
+                        : 'bg-white text-brand-navy border border-slate-200 hover:bg-brand-blue hover:text-white hover:border-brand-blue shadow-sm cursor-pointer'
+                    }">
+                        Selanjutnya »
+                    </button>
+                `;
 
-            // 2. Logika Pagination (Perubahan Warna Saat Diklik)
-            const pageButtons = document.querySelectorAll(".page-btn");
-            pageButtons.forEach(btn => {
-                btn.addEventListener("click", () => {
-                    // Reset semua tombol halaman
-                    pageButtons.forEach(b => {
-                        b.className = "page-btn w-8 h-8 flex items-center justify-center rounded-full text-slate-500 hover:bg-slate-200 transition-colors font-medium";
+                paginationContainer.innerHTML = html;
+
+                // Event Listeners
+                const prevBtn = document.getElementById("btn-prev-page");
+                if (prevBtn && currentPage > 1) {
+                    prevBtn.addEventListener("click", () => changePage(currentPage - 1));
+                }
+
+                const nextBtn = document.getElementById("btn-next-page");
+                if (nextBtn && currentPage < totalPages) {
+                    nextBtn.addEventListener("click", () => changePage(currentPage + 1));
+                }
+
+                document.querySelectorAll(".page-num-btn").forEach(btn => {
+                    btn.addEventListener("click", (e) => {
+                        const targetPage = parseInt(e.currentTarget.getAttribute("data-page"), 10);
+                        if (targetPage && targetPage !== currentPage) {
+                            changePage(targetPage);
+                        }
                     });
-                    // Aktifkan tombol yang diklik
-                    btn.className = "page-btn w-8 h-8 flex items-center justify-center rounded-full bg-brand-blue text-white font-bold shadow-md";
                 });
-            });
+            }
+
+            function changePage(newPage) {
+                if (newPage < 1 || newPage > totalPages || newPage === currentPage) return;
+                fetchWordPressPosts(newPage);
+                const section = document.getElementById('articles-section');
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+
+            function showSkeleton() {
+                if (!articleContainer) return;
+                articleContainer.innerHTML = Array(6).fill(0).map(() => `
+                    <div class="bg-white rounded-3xl shadow-sm border border-slate-100 animate-pulse p-6">
+                        <div class="w-full h-48 bg-slate-200 rounded-2xl mb-6"></div>
+                        <div class="h-4 bg-slate-200 rounded w-1/3 mb-4"></div>
+                        <div class="h-6 bg-slate-200 rounded w-3/4 mb-3"></div>
+                        <div class="h-4 bg-slate-200 rounded w-full mb-2"></div>
+                        <div class="h-4 bg-slate-200 rounded w-2/3"></div>
+                    </div>
+                `).join('');
+            }
+
+            async function fetchWordPressPosts(page = 1) {
+                currentPage = page;
+                showSkeleton();
+                try {
+                    const response = await fetch(`https://iseedigitalmarketing.com/wp-json/wp/v2/posts?_embed&per_page=${perPage}&page=${page}`);
+                    if (!response.ok) throw new Error(`HTTP Error ${response.status}`);
+                    
+                    // Parse total pages and total posts count from headers
+                    const totalPagesHeader = response.headers.get('X-WP-TotalPages');
+                    const totalHeader = response.headers.get('X-WP-Total');
+                    
+                    if (totalPagesHeader) {
+                        totalPages = parseInt(totalPagesHeader, 10);
+                    }
+                    if (totalHeader) {
+                        totalPostsCount = parseInt(totalHeader, 10);
+                    }
+
+                    const data = await response.json();
+                    currentPosts = data;
+
+                    renderArticles(currentPosts);
+                    renderPaginationControls();
+                } catch (error) {
+                    console.error("Gagal mengambil data artikel:", error);
+                    articleContainer.innerHTML = `
+                        <div class="col-span-full text-center py-16 bg-white rounded-3xl border border-red-100 shadow-sm">
+                            <p class="text-slate-700 font-bold mb-2">Gagal memuat artikel dari server.</p>
+                            <p class="text-slate-400 text-xs mb-4">${error.message}</p>
+                            <button onclick="fetchWordPressPosts(${page})" class="bg-brand-blue text-white px-5 py-2 rounded-full text-xs font-bold shadow-md hover:bg-blue-700 transition-colors">Coba Lagi</button>
+                        </div>
+                    `;
+                }
+            }
+
+            if (searchInput) {
+                searchInput.addEventListener("input", (e) => {
+                    const query = e.target.value.toLowerCase();
+                    const filtered = currentPosts.filter(post => {
+                        const title = (post.title?.rendered || '').toLowerCase();
+                        const excerpt = (post.excerpt?.rendered || '').toLowerCase();
+                        return title.includes(query) || excerpt.includes(query);
+                    });
+                    renderArticles(filtered);
+                });
+            }
+
+            fetchWordPressPosts(1);
         });
     </script>
     <!-- Global Animations -->
