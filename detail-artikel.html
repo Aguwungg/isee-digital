@@ -304,7 +304,10 @@
             }
 
             try {
-                const response = await fetch(`https://iseedigitalmarketing.com/wp-json/wp/v2/posts/${postId}?_embed`);
+                const timestamp = new Date().getTime();
+                const response = await fetch(`https://iseedigitalmarketing.com/wp-json/wp/v2/posts/${postId}?_embed&_t=${timestamp}`, {
+                    cache: 'no-store'
+                });
                 if (!response.ok) throw new Error(`HTTP ${response.status} - Artikel tidak ditemukan`);
                 
                 const post = await response.json();
