@@ -30,13 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.addEventListener('click', () => {
                 // Remove active class from all
                 filterButtons.forEach(b => {
-                    b.classList.remove('bg-brand-blue', 'text-white', 'hover:shadow-md');
-                    b.classList.add('bg-blue-50', 'text-brand-blue', 'hover:bg-brand-blue', 'hover:text-white');
+                    b.classList.remove('bg-brand-navy', 'text-white', 'shadow-md');
+                    b.classList.add('bg-transparent', 'text-slate-500', 'hover:text-brand-blue', 'hover:bg-slate-50');
                 });
                 
                 // Add active class to clicked button
-                btn.classList.remove('bg-blue-50', 'text-brand-blue', 'hover:bg-brand-blue', 'hover:text-white');
-                btn.classList.add('bg-brand-blue', 'text-white', 'hover:shadow-md');
+                btn.classList.remove('bg-transparent', 'text-slate-500', 'hover:text-brand-blue', 'hover:bg-slate-50');
+                btn.classList.add('bg-brand-navy', 'text-white', 'shadow-md');
                 
                 currentCategory = btn.getAttribute('data-category');
                 currentPage = 1; // Reset to page 1 on new filter
